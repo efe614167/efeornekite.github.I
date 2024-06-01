@@ -72,6 +72,7 @@
 			 <select id="bedenSec" class="form-control">
                                     <option value="S">4</option>
                                     <option value="M">5</option>
+				 
                                     <option value="L">6</option>
                                 </select>
             <p>Profesyonel futbol topu, dayanıklı malzeme.</p>
@@ -276,14 +277,30 @@
         }
 	</script>
 		<script>
+			
 		var btnSelam=document.getElementById("tıklan");
-	btnSelam.onclick=function(){
+	btnSelam.onclick=function()
+	{
+if(totalPrice >0)
 		window.alert(totalPrice+  " TL  Sİparişiniz onaylandı ");
+	else
 		
+		window.alert(totalPrice+  "  Sepet Boş siparişiniz Alınamadı ");
 		  
 	}
 	
     </script>
+					 
+	
+			
+		
+		
+		  
+	
+	
+					 
+					 
+					
 <head>
 <meta charset="utf-8">
 
