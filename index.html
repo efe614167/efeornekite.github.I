@@ -270,7 +270,16 @@
 
             <!-- Yemekler -->
   <div class="menu-section">
-    <h3>Yemekler</h3>
+    <style>
+    h3 {
+        margin-bottom: 20px; /* Başlık ile altındaki içerik arasında 20px boşluk bırakır */
+        border-bottom: 2px solid #000; /* Başlığın altına siyah 2px'lik bir çizgi ekler */
+        padding-bottom: 10px; /* Çizgi ile başlık arasına biraz boşluk ekler */
+    }
+</style>
+
+<h3>Yemekler</h3>
+
     <div class="menu-items">
         <!-- Önceki Yemekler -->
         <div class="menu-item" data-name="Köfte" data-price="130">
@@ -595,8 +604,166 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
+		 <div class="menu-item" data-name="İskender" data-price="150">
+            <img src="iskender.jfif" alt="İskender">
+            <label for="yemek38">İskender - 150 TL</label>
+            <p>Yumuşacık pide üstüne döner, yoğurt ve tereyağlı domates sosu ile servis edilir.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Türk Yemeği 2 - Karnıyarık -->
+        <div class="menu-item" data-name="Karnıyarık" data-price="110">
+            <img src="karnıyarık.jfif" alt="Karnıyarık">
+            <label for="yemek39">Karnıyarık - 110 TL</label>
+            <p>Patlıcanların içine kıyma, soğan ve baharatlarla doldurulup fırınlanarak yapılan nefis yemek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Türk Yemeği 3 - Çökelekli Börek -->
+        <div class="menu-item" data-name="Çökelekli Börek" data-price="75">
+            <img src="cokerek.jpg" alt="Çökelekli Börek">
+            <label for="yemek40">Çökelekli Börek - 75 TL</label>
+            <p>Yufka içinde çökelek ve baharatlarla yapılan lezzetli börek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Türk Yemeği 4 - Manti -->
+        <div class="menu-item" data-name="Mantı" data-price="95">
+            <img src="mantı.jfif" alt="Mantı">
+            <label for="yemek41">Mantı - 95 TL</label>
+            <p>Küçük hamur parçaları içine kıyma konup haşlanarak yoğurt ve sosla servis edilir.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Türk Yemeği 5 - Beyran -->
+        <div class="menu-item" data-name="Beyran" data-price="100">
+            <img src="beyran.jfif" alt="Beyran">
+            <label for="yemek42">Beyran - 100 TL</label>
+            <p>Gaziantep mutfağının lezzetli çorbası, et suyu, pilav ve baharatlarla hazırlanır.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Türk Yemeği 6 - Kuymak -->
+        <div class="menu-item" data-name="Kuymak" data-price="80">
+            <img src="kuymak.jfif" alt="Kuymak">
+            <label for="yemek43">Kuymak - 80 TL</label>
+            <p>Karadeniz'e ait, mısır unu ve peynirle yapılan sıcak, pürüzsüz bir lezzet.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+		<div class="menu-item" data-name="Taze Fasulye" data-price="70">
+    <img src="taze.jfif" alt="Taze Fasulye">
+    <label for="yemek46">Taze Fasulye - 70 TL</label>
+    <p>Domates ve zeytinyağı ile pişirilmiş, nefis taze fasulye yemeği.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+		
 
         
+<div class="menu-section">
+    <h3>Salatalar</h3>
+    <div class="menu-items">
+        <!-- Salata 1 -->
+        <div class="menu-item" data-name="Çoban Salata" data-price="45">
+            <img src="çoban.jfif" alt="Çoban Salata">
+            <label for="salata1">Çoban Salata - 45 TL</label>
+            <p>Taze domates, salatalık, biber, soğan ve zeytinyağlı sosla hazırlanan klasik Türk salatası.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Salata 2 -->
+        <div class="menu-item" data-name="Mevsim Salata" data-price="50">
+            <img src="mevsim.jfif" alt="Mevsim Salata">
+            <label for="salata2">Mevsim Salata - 50 TL</label>
+            <p>Taze mevsim sebzeleri, zeytinyağlı sos ve nar ekşisi ile tatlandırılmış salata.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Salata 3 -->
+        <div class="menu-item" data-name="Akdeniz Salata" data-price="55">
+            <img src="akdenniz.jfif" alt="Akdeniz Salata">
+            <label for="salata3">Akdeniz Salata - 55 TL</label>
+            <p>Domates, salatalık, zeytin, beyaz peynir ve zeytinyağlı sosla hazırlanan Akdeniz esintili salata.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Salata 4 -->
+        <div class="menu-item" data-name="Caesar Salata" data-price="65">
+            <img src="Caesar Salata.jfif" alt="Caesar Salata">
+            <label for="salata4">Caesar Salata - 65 TL</label>
+            <p>Marullarla hazırlanan, tavuk, kruton ve parmesan peyniri ile servis edilen klasik Caesar salata.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Salata 5 -->
+        <div class="menu-item" data-name="Ton Balıklı Salata" data-price="75">
+            <img src="ton.jfif" alt="Ton Balıklı Salata">
+            <label for="salata5">Ton Balıklı Salata - 75 TL</label>
+            <p>Ton balığı, yeşillikler ve zeytinyağlı sos ile hazırlanan lezzetli salata.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Salata 6 -->
+        <div class="menu-item" data-name="Avokadolu Salata" data-price="80">
+            <img src="ava.jfif" alt="Avokadolu Salata">
+            <label for="salata6">Avokadolu Salata - 80 TL</label>
+            <p>Avokado, marul, domates ve zeytinyağlı sos ile yapılan hafif ve besleyici salata.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 
@@ -993,7 +1160,7 @@
 <form action="#" method="POST">
     <!-- Sepet -->
     <div class="cart-section">
-        <h3>Sepetiniz</h3>
+        <h2>Sepetiniz</h2>
         <div id="sepet">
             <p>Sepetiniz boş. Lütfen ürün ekleyin.</p>
         </div>
