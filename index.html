@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemek Sipariş Sayfası</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header style="text-align: center; padding: 20px; background-color: #27ae60; color: white;">
+    <h1>YEŞİLDAĞ LEZZETLER DÜNYASI</h1>
+</header>
+
+<nav style="background-color: #2c3e50; padding: 10px 0; position: sticky; top: 0; z-index: 1000;">
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 40px;">
+        <li><a href="admin.html" style="text-decoration: none; font-weight: bold; color: white; font-size: 18px;">Admin Sayfası</a></li>
+        <li><a href="asci.html" style="text-decoration: none; font-weight: bold; color: white; font-size: 18px;">Aşçı Sayfası</a></li>
+    </ul>
+</nav>
+
+
+
+
+
+    <div class="container">
+        <form action="#" method="POST">
+            <!-- Masa Numarası Seçimi -->
+           <!-- Masa Numarası Seçimi -->
+<div class="form-group">
+    <label for="masa_no">Masa Numarası:</label>
+    <select name="masa_no" id="masa_no" required>
+        <option value="1">Masa 1</option>
+        <option value="2">Masa 2</option>
+        <option value="3">Masa 3</option>
+        <option value="4">Masa 4</option>
+        <option value="5">Masa 5</option>
+        <option value="6">Masa 6</option>
+        <option value="7">Masa 7</option>
+        <option value="8">Masa 8</option>
+        <option value="9">Masa 9</option>
+        <option value="10">Masa 10</option>
+        <option value="11">Masa 11</option>
+        <option value="12">Masa 12</option>
+        <option value="13">Masa 13</option>
+        <option value="14">Masa 14</option>
+        <option value="15">Masa 15</option>
+    </select>
+</div>
+ 	
+<div class="menu-section">
+    <h3>Çorbalar</h3>
+    <div class="menu-items">
+        <div class="menu-item" data-name="mercimek" data-price="50">
+            <img src="MercimekÇorbası.jpg" alt="mercimek">
+            <label for="corba1">Mercimek Çorbası - 50 TL</label> 
+            <p>Yumuşak mercimek ve baharatların mükemmel uyumu, sofralarınızda sıcak bir başlangıç.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="ezogelin" data-price="40">
+            <img src="ezo.jfif" alt="ezogelin">
+            <label for="corba2">Ezogelin Çorbası - 40 TL</label>
+            <p>Bol baharatlı ve zeytinyağlı, geleneksel bir lezzet. Sofranızı şenlendirecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Kelle paça" data-price="40">
+            <img src="paça.jfif" alt="Kelle paça">
+            <label for="corba3">Kelle Paça Çorbası - 40 TL</label>
+            <p>Çeşitli etlerin en güzel haliyle hazırlanan, özel baharatlarla zenginleştirilen nefis bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Yeni Eklenen Çorbalar -->
+        <div class="menu-item" data-name="domates" data-price="45">
+            <img src="domates.jpeg" alt="domates">
+            <label for="corba4">Domates Çorbası - 45 TL</label>
+            <p>Özel baharatlarla lezzetlendirilmiş domatesin enfes tatlı ekşi dengesiyle hazırlanmış klasik bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="tarator" data-price="35">
+            <img src="tarator.jfif" alt="tarator">
+            <label for="corba5">Tarator Çorbası - 35 TL</label>
+            <p>Yoğurt ve zeytinyağının mükemmel birleşimi, içinde ince ince doğranmış salatalık ve sarımsak var.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="yayla" data-price="45">
+            <img src="yayla.webp" alt="yayla">
+            <label for="corba6">Yayla Çorbası - 45 TL</label>
+            <p>Yoğurtlu, naneli ve pirinçli mükemmel bir lezzet. Özellikle yaz aylarında serinletici bir tat.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="tavuk" data-price="50">
+            <img src="tavuk.jfif" alt="tavuk">
+            <label for="corba7">Tavuk Çorbası - 50 TL</label>
+            <p>Birçok farklı malzeme ile tavuk etinin tam lezzetini alacağınız, sıcak ve doyurucu bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="balık" data-price="55">
+            <img src="balık.webp" alt="balık">
+            <label for="corba8">Balık Çorbası - 55 TL</label>
+            <p>Balık etinin tüm tazeliğiyle hazırlanan, baharatlar ve sebzelerle tatlandırılmış nefis bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="karnıbahar" data-price="50">
+            <img src="karnıbahar.jpg" alt="karnıbahar">
+            <label for="corba9">Karnıbahar Çorbası - 50 TL</label>
+            <p>Yumuşacık karnıbahar ve baharatlar ile hazırlanan nefis bir çorba. Hafif ama doyurucu.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Devamındaki Çorbalar -->
+        <div class="menu-item" data-name="şehriye" data-price="40">
+            <img src="sehriye.jfif" alt="şehriye">
+            <label for="corba10">Şehriye Çorbası - 40 TL</label>
+            <p>İnce şehriye ve et suyu ile hazırlanmış, sıcak ve besleyici bir başlangıç.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="acılı" data-price="45">
+            <img src="acı.jfif" alt="acılı">
+            <label for="corba11">Acılı Çorba - 45 TL</label>
+            <p>Baharatlı, acılı ve doyurucu, soğuk kış günlerinde içinizi ısıtacak bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="sütlü" data-price="30">
+            <img src="sutl.jfif" alt="sütlü">
+            <label for="corba12">Sütlü Çorba - 30 TL</label>
+            <p>Yumuşak sütlü çorba, içine eklenen sebzelerle besleyici bir lezzet.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="zeytinyağlı" data-price="40">
+            <img src="zeytin.jfif" alt="zeytinyağlı">
+            <label for="corba13">Zeytinyağlı Çorba - 40 TL</label>
+            <p>Zeytinyağı ve sebzelerle hazırlanan hafif, sağlıklı ve lezzetli bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="kısır" data-price="25">
+            <img src="kısır.jfif" alt="kısır">
+            <label for="corba14">Kısır Çorbası - 25 TL</label>
+            <p>İçinde buğday, domates ve yeşilliklerin bulunduğu nefis, hafif bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="etli" data-price="55">
+            <img src="etli.jfif" alt="etli">
+            <label for="corba15">Etli Çorba - 55 TL</label>
+            <p>Özel et suyu ve taze malzemelerle hazırlanan, besleyici ve doyurucu bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="vegan" data-price="40">
+            <img src="vegan.jpg" alt="vegan">
+            <label for="corba16">Vegan Çorbası - 40 TL</label>
+            <p>Sebzelerden ve baklagillerden yapılan, tamamen bitkisel bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="soğan" data-price="35">
+            <img src="sogan.jpg" alt="soğan">
+            <label for="corba17">Soğan Çorbası - 35 TL</label>
+            <p>Soğanın tatlılığı ve et suyu ile mükemmel bir uyum sağlayan sıcak bir başlangıç.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="kabak" data-price="30">
+            <img src="kabak.jfif" alt="kabak">
+            <label for="corba18">Kabak Çorbası - 30 TL</label>
+            <p>Çıtır sebzeler ve ince doğranmış kabaklar ile sağlıklı ve hafif bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="börülce" data-price="45">
+            <img src="borulce.jfif" alt="börülce">
+            <label for="corba19">Börülce Çorbası - 45 TL</label>
+            <p>Protein ve lif kaynağı börülcelerle yapılan, sağlıklı ve lezzetli bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="şehriye-tarator" data-price="35">
+            <img src="tel-sehriyeli-yogurt-corbasi-resimli-yemek-tarifi(12).jpg" alt="şehriye-tarator">
+            <label for="corba20">Şehriye Tarator Çorbası - 35 TL</label>
+            <p>Yoğurtlu şehriye ve sarımsak ile hazırlanan farklı ve lezzetli bir çorba.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="etli-mercimek" data-price="50">
+            <img src="yesil-mercimek-corbasi-videolu-320x213.jpg" alt="etli-mercimek">
+            <label for="corba21">Etli Mercimek Çorbası - 50 TL</label>
+            <p>Mercimek çorbasının etli versiyonu, daha yoğun ve besleyici.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <!-- Yemekler -->
+  <div class="menu-section">
+    <h3>Yemekler</h3>
+    <div class="menu-items">
+        <!-- Önceki Yemekler -->
+        <div class="menu-item" data-name="Köfte" data-price="130">
+            <img src="images.jfif" alt="Köfte">
+            <label for="yemek1">Köfte - 130 TL</label>
+            <p>Güzelce marine edilmiş lezzetli köfte.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Pizza" data-price="150">
+            <img src="pizza.jpg" alt="Pizza">
+            <label for="yemek2">Pizza - 150 TL</label>
+            <p>Taze mozzarella, domates ve fesleğen ile hazırlanan klasik İtalyan pizzası.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Köri Tavuk" data-price="140">
+            <img src="kori-soslu-tavuk-yemekcom.webp" alt="Köri Tavuk">
+            <label for="yemek3">Köri Tavuk - 140 TL</label>
+            <p>Zengin ve aromatik bir köri sosunda pişirilmiş tavuk.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        
+        <!-- Yeni Yemekler -->
+        <div class="menu-item" data-name="Mantarlı Et Yemeği" data-price="160">
+            <img src="mantar.jfif" alt="Mantarlı Et Yemeği">
+            <label for="yemek4">Mantarlı Et Yemeği - 160 TL</label>
+            <p>Yumuşacık etlerin mantarlarla birlikte pişirilmesiyle hazırlanan nefis yemek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Tavuk Şiş" data-price="145">
+            <img src="tavada-tavuk-sis-c52c42fe-a396-495d-b649-563cf6e0e616.webp" alt="Tavuk Şiş">
+            <label for="yemek5">Tavuk Şiş - 145 TL</label>
+            <p>Izgara tavuk şişleri, yanında sebzelerle servis edilir.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Izgara Köfte" data-price="155">
+            <img src="kofteızgara.jfif" alt="Izgara Köfte">
+            <label for="yemek6">Izgara Köfte - 155 TL</label>
+            <p>Izgara köfte, yanında ızgara sebzelerle servis edilir.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Yeni 9 Yemek Eklendi -->
+        <div class="menu-item" data-name="Beef Steak" data-price="180">
+            <img src="bref.jpg" alt="Beef Steak">
+            <label for="yemek7">Beef Steak - 180 TL</label>
+            <p>Tatlı ve tuzlu bir lezzet kombinasyonuyla sunulmuş yumuşak biftek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Lazanya" data-price="120">
+            <img src="lazanya.jfif" alt="Lazanya">
+            <label for="yemek8">Lazanya - 120 TL</label>
+            <p>İçinde peynir ve et bulunan, fırınlanmış lezzetli lazanya.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Lahmacun" data-price="110">
+            <img src="lahmacun.jfif" alt="Lahmacun">
+            <label for="yemek9">Lahmacun - 110 TL</label>
+            <p>İnce hamur üzerine kıymalı harçla yapılan geleneksel Türk yemeği.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Pilav Üstü Tavuk" data-price="140">
+            <img src="pilav.jpeg" alt="Pilav Üstü Tavuk">
+            <label for="yemek10">Pilav Üstü Tavuk - 140 TL</label>
+            <p>Pilavın üzerine eklenen, baharatlı tavuk parçaları ile yapılan yemek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Spaghetti Bolognese" data-price="135">
+            <img src="makarna.jfif" alt="Spaghetti Bolognese">
+            <label for="yemek11">Spaghetti Bolognese - 135 TL</label>
+            <p>İtalyan mutfağının klasiklerinden, bolonez soslu spagetti.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Fettuccine Alfredo" data-price="150">
+            <img src="alfredo.jfif" alt="Fettuccine Alfredo">
+            <label for="yemek12">Fettuccine Alfredo - 150 TL</label>
+            <p>Alfredo sosu ile kremalı fettucine makarna.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Shawarma" data-price="125">
+            <img src="swarma.jpg" alt="Shawarma">
+            <label for="yemek13">Shawarma - 125 TL</label>
+            <p>Baharatlı etlerin döner şeklinde pişirilerek sunulmuş bir Orta Doğu yemeği.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        
+        <!-- Yeni 12 Yemek Eklendi -->
+        <div class="menu-item" data-name="Grilled Chicken" data-price="150">
+            <img src="chicken.jfif" alt="Grilled Chicken">
+            <label for="yemek16">Grilled Chicken - 150 TL</label>
+            <p>Izgarada pişirilmiş tavuk göğsü, yanında sebzelerle servis edilir.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Fish and Chips" data-price="140">
+            <img src="find.jfif" alt="Fish and Chips">
+            <label for="yemek17">Fish and Chips - 140 TL</label>
+            <p>Lezzetli kızarmış balık ve patates kızartması.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Chicken Wings" data-price="160">
+            <img src="wings.jfif" alt="Chicken Wings">
+            <label for="yemek18">Chicken Wings - 160 TL</label>
+            <p>Lezzetli tavuk kanatları, barbekü sosunda pişirilmiş.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+    
+
+
+      <div class="menu-item" data-name="Caesar Salad" data-price="100">
+    <img src="salad.jfif" alt="Caesar Salad">
+    <label for="yemek23">Caesar Salad - 100 TL</label>
+    <p>Klasik Caesar salatası, taze marul, parmesan peyniri ve cevizle hazırlanır.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="Vegetarian Pizza" data-price="150">
+    <img src="vetenger.jfif" alt="Vegetarian Pizza">
+    <label for="yemek24">Vegetarian Pizza - 150 TL</label>
+    <p>Vejetaryen pizza, taze sebzeler ve mozarella peyniriyle hazırlanır.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="Et Döner" data-price="160">
+    <img src="et.jfif" alt="Et Döner">
+    <label for="yemek25">Et Döner - 160 TL</label>
+    <p>Lezzetli et döner, ince dilimlenmiş etler ve nefis baharatlarla hazırlanır.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="Tacos" data-price="110">
+    <img src="tacos.jfif" alt="Tacos">
+    <label for="yemek26">Tacos - 110 TL</label>
+    <p>Meksika mutfağından geleneksel tacos, içi dolu taze malzemelerle sunulur.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="Pulled Pork Sandwich" data-price="130">
+    <img src="pork.jfif" alt="Pulled Pork Sandwich">
+    <label for="yemek27">Pulled Pork Sandwich - 130 TL</label>
+    <p>Yavaş pişirilmiş domuz eti, gevrek ekmek içinde sunulur.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="Falafel" data-price="90">
+    <img src="falefel.jfif" alt="Falafel">
+    <label for="yemek28">Falafel - 90 TL</label>
+    <p>Falanfel, nohut ve baharatlardan yapılan geleneksel Orta Doğu yemeğidir.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="Lamb Shawarma" data-price="180">
+    <img src="lamb.jfif" alt="Lamb Shawarma">
+    <label for="yemek29">Lamb Shawarma - 180 TL</label>
+    <p>Zeytinyağında pişirilmiş kuzu etleri, baharatlarla lezzetlendirilmiştir.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="Duck Breast" data-price="210">
+    <img src="duck.jfif" alt="Duck Breast">
+    <label for="yemek30">Duck Breast - 210 TL</label>
+    <p>Özel sosla pişirilmiş ördek göğsü, zengin aromasıyla sunulur.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+
+
+            <!-- İçecekler -->
+           <!-- İçecekler -->
+<div class="menu-section">
+    <h3>İçecekler</h3>
+    <div class="menu-items">
+        <div class="menu-item" data-name="Su" data-price="15">
+            <img src="6300752a503a7.webp" alt="Su">
+            <label for="icecek1">Su - 15 TL</label>
+            <p class="description">Saf su, sağlıklı bir içecek alternatifi.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Kola" data-price="40">
+            <img src="kola-kutukola-cocacola-2021-01-10-600x507.jpg" alt="Kola">
+            <label for="icecek2">Kola - 40 TL</label>
+            <p class="description">Dünyaca ünlü cola, serinletici ve tatlandırıcı içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Ayran" data-price="17">
+            <img src="ayran.jpg" alt="Ayran">
+            <label for="icecek3">Ayran - 17 TL</label>
+            <p class="description">Yoğurt, su ve tuz karışımından yapılan ferahlatıcı bir içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Yeni Eklenen 6 İçecek -->
+        <div class="menu-item" data-name="Fanta" data-price="40">
+            <img src="fanta.png" alt="Fanta">
+            <label for="icecek4">Fanta - 40 TL</label>
+            <p class="description">Tatlı narenciye tadı ile ferahlatıcı bir içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Sprite" data-price="35">
+            <img src="sprite.jfif" alt="Sprite">
+            <label for="icecek5">Sprite - 35 TL</label>
+            <p class="description">Limonlu, gazlı ferahlatıcı içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Limonata" data-price="25">
+            <img src="limonata.jpg" alt="Limonata">
+            <label for="icecek6">Limonata - 25 TL</label>
+            <p class="description">Ev yapımı, taze limonla hazırlanmış serinletici bir içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Şalgam" data-price="20">
+            <img src="salgam.jfif" alt="Şalgam">
+            <label for="icecek7">Şalgam - 20 TL</label>
+            <p class="description">Acılı ya da sade olarak sunulan, sağlıklı ve ferahlatıcı bir içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Meyve Suyu" data-price="30">
+            <img src="meyvesuyu.webp" alt="Meyve Suyu">
+            <label for="icecek8">Meyve Suyu - 30 TL</label>
+            <p class="description">Taze sıkılmış meyve suyu, doğal ve sağlıklı.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Gazoz" data-price="30">
+            <img src="gazoz.webp" alt="Gazoz">
+            <label for="icecek9">Gazoz - 30 TL</label>
+            <p class="description">Klasik gazlı içecek, tatlı ve ferahlatıcı.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Pepsi" data-price="42">
+            <img src="pepsi.jfif" alt="Pepsi">
+            <label for="icecek18">Pepsi - 42 TL</label>
+            <p class="description">Dünyaca ünlü Pepsi, ferahlatıcı ve tatlandırıcı içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Coca Zero" data-price="40">
+            <img src="cocozero.jfif" alt="Coca Zero">
+            <label for="icecek15">Coca Zero - 40 TL</label>
+            <p class="description">Şekersiz cola, düşük kalorili seçenek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Red Bull" data-price="45">
+            <img src="redbul.jfif" alt="Red Bull">
+            <label for="icecek13">Red Bull - 45 TL</label>
+            <p class="description">Enerji veren içecek, yoğun tat ve uyanıklık sağlar.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Soda" data-price="15">
+            <img src="soda.jfif" alt="Soda">
+            <label for="icecek11">Soda - 15 TL</label>
+            <p class="description">Doğal mineralli soda, ferahlatıcı bir içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Ice Tea" data-price="35">
+            <img src="iceatea.jfif" alt="Ice Tea">
+            <label for="icecek10">Ice Tea - 35 TL</label>
+            <p class="description">Soğutulmuş çay, ferahlatıcı ve hafif tatlandırılmış.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Limonlu Soda" data-price="15">
+            <img src="sodal.jfif" alt="Limonlu Soda">
+            <label for="icecek10">Limonlu Soda - 15 TL</label>
+            <p class="description">Limonlu gazlı soda, serinletici bir içecek.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+          <div class="menu-section">
+    <h3>Tatlılar</h3>
+    <div class="menu-items">
+        <div class="menu-item" data-name="Baklava" data-price="80">
+            <img src="baklava.jfif" alt="Baklava">
+            <label for="tatli1">Baklava - 80 TL</label>
+            <p class="description">Cevizli veya fıstıklı çıtır baklava, şerbetli tatlı arayanlar için ideal.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Kadayıf" data-price="75">
+            <img src="kadayıf.jfif" alt="Kadayıf">
+            <label for="tatli2">Kadayıf - 75 TL</label>
+            <p class="description">Özel şerbetle tatlandırılmış çıtır kadayıf, fıstıkla lezzetli bir uyum yakalar.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Kremalı Pasta" data-price="125">
+            <img src="uc_cikolatali_kremali_pasta-d5ac667d-f22a-44c9-82ab-2ca2276de31b.webp" alt="Kremalı Pasta">
+            <label for="tatli3">Kremalı Pasta - 125 TL</label>
+            <p class="description">Zengin kremasıyla yumuşacık pasta, her lokmada mutluluk veriyor.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <!-- Yeni Tatlılar Ekleniyor -->
+        <div class="menu-item" data-name="Sütlaç" data-price="50">
+            <img src="sutlac.jpg" alt="Sütlaç">
+            <label for="tatli4">Sütlaç - 50 TL</label>
+            <p class="description">Sütlaç, üzeri nar taneleriyle tatlandırılmış geleneksel Türk tatlısıdır.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Profiterol" data-price="70">
+            <img src="prof.jpg" alt="Profiterol">
+            <label for="tatli5">Profiterol - 70 TL</label>
+            <p class="description">Çikolata sosu ile kaplanmış minik puf börekleri, kremalı iç harcıyla.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Güllaç" data-price="55">
+            <img src="guulac.jfif" alt="Güllaç">
+            <label for="tatli6">Güllaç - 55 TL</label>
+            <p class="description">Ramazan ayının vazgeçilmezi, süt ve gül suyu ile hazırlanan hafif tatlı.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Aşure" data-price="60">
+            <img src="asure.webp" alt="Aşure">
+            <label for="tatli7">Aşure - 60 TL</label>
+            <p class="description">İçinde pek çok farklı malzeme barındıran, geleneksel aşure tatlısı.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Çikolatalı Mousse" data-price="85">
+            <img src="moouse.jpg" alt="Çikolatalı Mousse">
+            <label for="tatli8">Çikolatalı Mousse - 85 TL</label>
+            <p class="description">Zengin çikolata tadı ve hafif dokusu ile bu tatlı, çikolata severler için mükemmel.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="Şekerpare" data-price="70">
+            <img src="sekarpare.jfif" alt="Şekerpare">
+            <label for="tatli9">Şekerpare - 70 TL</label>
+            <p class="description">Şerbetli, fıstıklı ve yumuşacık şekerpare tatlısı.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Künefe" data-price="90">
+            <img src="kunefe.jfif" alt="Künefe">
+            <label for="tatli10">Künefe - 90 TL</label>
+            <p class="description">Hafif şerbetle tatlandırılmış, tel kadayıf ve peynirli künefe.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Lokma" data-price="65">
+            <img src="lokma.jfif" alt="Lokma">
+            <label for="tatli11">Lokma - 65 TL</label>
+            <p class="description">Kızarmış hamur topları, şerbetle kaplanmış – gevrek ve tatlı!</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Revani" data-price="75">
+            <img src="revani.jfif" alt="Revani">
+            <label for="tatli12">Revani - 75 TL</label>
+            <p class="description">İrmik kekinin üzerine dökülen şerbetle yapılan klasik Türk tatlısı.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Çörek" data-price="50">
+            <img src="çörek.jfif" alt="Çörek">
+            <label for="tatli13">Çörek - 50 TL</label>
+            <p class="description">Yumuşak ve kabarık bir Türk ekmeği, çay saati için mükemmel.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Pişmaniye" data-price="55">
+            <img src="pismaniye.jfif" alt="Pişmaniye">
+            <label for="tatli14">Pişmaniye - 55 TL</label>
+            <p class="description">Pamuk şeker benzeri bir tatlı, şeker ve un ile yapılır, yumuşak ve tatlıdır.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Muhallebi" data-price="70">
+            <img src="muhallebi.jfif" alt="Muhallebi">
+            <label for="tatli15">Muhallebi - 70 TL</label>
+            <p class="description">Sütlü ve kremsi bir tatlı, üzerine tarçın serpilerek servis edilir.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Ayva Tatlısı" data-price="65">
+            <img src="ayva.jfif" alt="Ayva Tatlısı">
+            <label for="tatli16">Ayva Tatlısı - 65 TL</label>
+            <p class="description">Şeker ve tarçınla pişirilmiş ayva tatlısı, mükemmel bir sonbahar tatlısıdır.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Dondurma" data-price="50">
+            <img src="dondurma.jfif" alt="Dondurma">
+            <label for="tatli17">Dondurma - 50 TL</label>
+            <p class="description">Türk dondurması, zengin ve kremamsı dokusu ile özel bir lezzet sunar.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Krem Karamel" data-price="80">
+            <img src="krem.jfif" alt="Krem Karamel">
+            <label for="tatli18">Krem Karamel - 80 TL</label>
+            <p class="description">Karamele batırılmış, kremalı bir tatlı, yumuşak ve ipeksi dokusu ile.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Tulumba" data-price="65">
+            <img src="tulumba.jfif" alt="Tulumba">
+            <label for="tatli19">Tulumba - 65 TL</label>
+            <p class="description">Kızarmış hamur tatlısı, şerbetle kaplanmış, gevrek ve tatlı.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Saray Helvası" data-price="75">
+            <img src="sarayhelvası.jfif" alt="Saray Helvası">
+            <label for="tatli20">Saray Helvası - 75 TL</label>
+            <p class="description">İrmik, tereyağı ve şekerle yapılan geleneksel Türk helvası.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+		<div class="menu-item" data-name="Tiramisu" data-price="85">
+    <img src="tiramisu.webp" alt="Tiramisu">
+    <label for="tatliTiramisu">Tiramisu - 85 TL</label>
+    <p class="description">İtalya'nın ünlü tatlısı, kahve ve mascarpone peyniriyle hazırlanmış lezzetli bir tatlı.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+    </div>
+</div>
+
+<form action="#" method="POST">
+    <!-- Sepet -->
+    <div class="cart-section">
+        <h3>Sepetiniz</h3>
+        <div id="sepet">
+            <p>Sepetiniz boş. Lütfen ürün ekleyin.</p>
+        </div>
+        <p id="toplam">Toplam: 0 TL</p>
+    </div>
+
+    <!-- Sipariş Gönder Butonu -->
+    <div class="form-group">
+        <button type="submit" class="btn">Siparişi Gönder</button>
+    </div>
+</form>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yemek Siparişi | Tüm Hakları Saklıdır</p>
+    </footer>
+
+    <script>
+   const masaSelect = document.getElementById('masa_no');
+const menuItems = document.querySelectorAll('.menu-item');
+const sepetDiv = document.getElementById('sepet');
+const toplamDiv = document.getElementById('toplam');
+let masaNumarasi = masaSelect.value;
+
+// Masa numarasını güncelle
+masaSelect.addEventListener('change', (e) => {
+    masaNumarasi = e.target.value;
+});
+
+menuItems.forEach(item => {
+    const increaseButton = item.querySelector('.increase');
+    const decreaseButton = item.querySelector('.decrease');
+    const quantitySpan = item.querySelector('.quantity');
+    const price = parseInt(item.getAttribute('data-price'));
+    const name = item.getAttribute('data-name');
+
+    let quantity = 0;
+
+    increaseButton.addEventListener('click', () => {
+        quantity++;
+        quantitySpan.textContent = quantity;
+        updateCart(name, price, quantity);
+    });
+
+    decreaseButton.addEventListener('click', () => {
+        if (quantity > 0) {
+            quantity--;
+            quantitySpan.textContent = quantity;
+            updateCart(name, price, quantity);
+        }
+    });
+});
+
+// Sepeti güncelleme fonksiyonu
+function updateCart(name, price, quantity) {
+    let sepet = JSON.parse(localStorage.getItem('sepet')) || []; // Önceki sepet verilerini al
+    let toplam = 0;
+
+    // Menü öğelerindeki her bir yemek için sepeti güncelle
+    menuItems.forEach(item => {
+        const itemName = item.getAttribute('data-name');
+        const itemPrice = parseInt(item.getAttribute('data-price'));
+        const itemQuantity = parseInt(item.querySelector('.quantity').textContent);
+
+        if (itemQuantity > 0) {
+            // Eğer yemek zaten sepette varsa, miktarını güncelle
+            let existingItem = sepet.find(product => product.name === itemName && product.masa === masaNumarasi);
+            if (existingItem) {
+                existingItem.quantity = itemQuantity;
+            } else {
+                // Yoksa sepete yeni ekle
+                sepet.push({ name: itemName, price: itemPrice, quantity: itemQuantity, masa: masaNumarasi });
+            }
+            toplam += itemPrice * itemQuantity;
+        } else {
+            // Eğer miktar 0 ise, öğeyi sepetten çıkar
+            sepet = sepet.filter(product => !(product.name === itemName && product.masa === masaNumarasi));
+        }
+    });
+
+    // Sepeti localStorage'a kaydet
+    localStorage.setItem('sepet', JSON.stringify(sepet));
+
+    // Sepeti göster
+    if (sepet.length > 0) {
+        sepetDiv.innerHTML = '';
+        sepet.forEach(product => {
+            sepetDiv.innerHTML += `<p>${product.name} - ${product.quantity} x ${product.price} TL (Masa ${product.masa})</p>`;
+        });
+    } else {
+        sepetDiv.innerHTML = '<p>Sepetiniz boş. Lütfen ürün ekleyin.</p>';
+    }
+
+    // Toplamı göster
+    toplamDiv.innerHTML = `Toplam: ${toplam} TL`;
+}
+
+</script>
+
+</body>
+</html>
