@@ -1156,6 +1156,119 @@
 
     </div>
 </div>
+		  <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .menu-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            width: 30%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item label {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 1em;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Yemek Menüsü</h1>
+
+    <div class="menu-section" id="menu-section">
+        <!-- Yemekler buraya yüklenecek -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yemek Menüsü</p>
+    </footer>
+
+    <script>
+        // Sayfa yüklendiğinde yemekleri yerleştir
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMenu();  // Yemekleri ekrana yerleştir
+        });
+
+        // Yemekleri LocalStorage'dan al ve sayfada göster
+        function renderMenu() {
+            const yemekler = JSON.parse(localStorage.getItem("yemekler")) || [];
+            const menuSection = document.getElementById("menu-section");
+            menuSection.innerHTML = "";  // Önceki yemekleri temizle
+
+            // Yemekleri listele
+            yemekler.forEach(yemek => {
+                const yemekItem = document.createElement("div");
+                yemekItem.classList.add("menu-item");
+
+                yemekItem.innerHTML = `
+                    <img src="${yemek.resim}" alt="${yemek.ad}">
+                    <label>${yemek.ad} - ${yemek.fiyat} TL</label>
+                    <p>${yemek.aciklama}</p>
+                `;
+
+                menuSection.appendChild(yemekItem);
+            });
+        }
+    </script>
+
 
 <form action="#" method="POST">
     <!-- Sepet -->
