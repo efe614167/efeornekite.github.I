@@ -1,237 +1,82 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepetiniz</title>
-    <style>
-        /* Genel sayfa stili */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7fc;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column; /* Sayfa içeriğini dikeyde hizala */
-        }
-
-        /* Konteyner */
-        .container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 900px;
-            padding: 40px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        h3 {
-            color: #4CAF50;
-            margin-bottom: 30px;
-            font-size: 28px;
-            font-weight: 600;
-        }
-
-        /* Sepet ürünleri listesi */
-        #sepet {
-            margin-bottom: 30px;
-            font-size: 18px;
-            line-height: 1.8;
-            text-align: left;
-            padding: 10px;
-        }
-
-        #sepet p {
-            padding: 12px;
-            margin: 0;
-            border-bottom: 1px solid #ddd;
-            font-size: 18px;
-        }
-
-        /* Toplam tutar kısmı */
-        #toplam {
-            font-size: 22px;
-            font-weight: bold;
-            color: #333;
-            margin-top: 30px;
-        }
-
-        /* Sepet boş olduğunda mesaj */
-        #sepet p.empty {
-            color: #ff5722;
-            font-size: 20px;
-        }
-
-        /* Butonlar */
-        .btn {
-            padding: 12px;
-            font-size: 18px;
-            border-radius: 8px;
-            margin-top: 15px;
-            width: 100%;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-clear {
-            background-color: #f44336;
-            color: white;
-            border: none;
-        }
-
-        .btn-clear:hover {
-            background-color: #e53935;
-        }
-
-        .btn-home {
-            background-color: #2196F3;
-            color: white;
-            border: none;
-        }
-
-        .btn-home:hover {
-            background-color: #1976D2;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #888;
-            text-align: center; /* Telif yazısını ortala */
-            width: 100%;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Sepet ürünleri */
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cart-item span {
-            font-size: 16px;
-        }
-
-        /* Masa arasına çizgi ve boşluk */
-        .masa-sepeti {
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #4CAF50; /* Çizgi ekledik */
-        }
-
-        .masa-header {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-            margin-top: 30px; /* Masalar arasındaki boşluk */
-        }
-
-        /* Masa başlıkları ile ürünler arasındaki boşluk */
-        .masa-header {
-            margin-top: 30px;
-        }
-
-        /* Sepet ürünleri arasına boşluk eklemek */
-        .cart-item {
-            margin-bottom: 15px;
-        }
-
-    </style>
-</head>
-<body>
-
-   <div class="container">
-    <h3>Sepetiniz</h3>
-
-    <!-- Masa Sepetleri Listesi -->
-    <div id="sepet"></div>
-
-    <!-- Toplam tutar -->
-    <p id="toplam">Toplam: 0 TL</p>
-
-    <!-- Sepeti temizleme butonu -->
-    <button class="btn btn-clear" id="temizle">Sepeti Temizle</button>
-
-    <!-- Anasayfaya dönme butonu -->
-    <a href="index.html">
-        <button class="btn btn-home">Anasayfaya Dön</button>
-    </a>
-</div>
-
-<footer>
-    <p>&copy; 2024 Yemek Siparişi | Tüm Hakları Saklıdır</p>
-</footer>
-
-<script>
-    // localStorage'tan sepet verilerini al
-    const sepet = JSON.parse(localStorage.getItem('sepet')) || [];
-    const sepetDiv = document.getElementById('sepet');
-    const toplamDiv = document.getElementById('toplam');
-    const temizleButton = document.getElementById('temizle');
-
-    let toplam = 0;
-    let masaToplam = {}; // Masa numaralarına göre toplamlar
-
-    // Sepet verilerini masa numarasına göre gruplandırma
-    const sepetByMasa = sepet.reduce((acc, product) => {
-        if (!acc[product.masa]) acc[product.masa] = [];
-        acc[product.masa].push(product);
-        return acc;
-    }, {});
-
-    // Sepet verilerini sayfada göster
-    if (Object.keys(sepetByMasa).length > 0) {
-        sepetDiv.innerHTML = ''; // Sepet boş değilse temizle
-        Object.keys(sepetByMasa).forEach((masaNumarasi, index) => {
-            const masaSepeti = sepetByMasa[masaNumarasi];
-            let masaSubtotal = 0;
-
-            // Masa başlığı
-            sepetDiv.innerHTML += `<div class="masa-sepeti">
-                                    <div class="masa-header">Masa ${masaNumarasi}</div>`;
-
-            masaSepeti.forEach(product => {
-                sepetDiv.innerHTML += `
-                    <div class="cart-item">
-                        <span>${product.name} - ${product.quantity} x ${product.price} TL</span>
-                    </div>
-                `;
-                masaSubtotal += product.price * product.quantity;
-            });
-
-            // Masa toplamı
-            sepetDiv.innerHTML += `<div class="cart-item">
-                                    <span><strong>Toplam: ${masaSubtotal} TL</strong></span>
-                                    </div></div>`;
-
-            masaToplam[masaNumarasi] = masaSubtotal;
-            toplam += masaSubtotal; // Genel toplam
-        });
-    } else {
-        sepetDiv.innerHTML = '<p class="empty">Sepetiniz boş.</p>';
+<meta charset="utf-8">
+<title>Giriş Paneli</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
     }
+    .login-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+    .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .login-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .login-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .login-container button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
 
-    // Toplam tutarı göster
-    toplamDiv.innerHTML = `Toplam: ${toplam} TL`;
+<body>
+    <div class="login-container">
+        <h2>Giriş Yap</h2>
+        <form id="loginForm" action="#" method="POST">
+            <input type="text" id="username" name="username" placeholder="Kullanıcı Adı" required>
+            <input type="password" id="password" name="password" placeholder="Şifre" required>
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </div>
 
-    // Sepeti temizleme fonksiyonu
-    temizleButton.addEventListener('click', () => {
-        localStorage.removeItem('sepet'); // Sepeti localStorage'dan sil
-        sepetDiv.innerHTML = '<p class="empty">Sepetiniz boş.</p>';
-        toplamDiv.innerHTML = 'Toplam: 0 TL';
-    });
-</script>
+    <script>
+        // Giriş formunun gönderilmesi
+        const loginForm = document.getElementById('loginForm');
+        
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Formun sayfayı yenilemesini engelle
+        
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
+            // Burada basit bir kontrol yapabiliriz, gerçek uygulamalarda sunucuya gönderilir
+            if (username === 'asci' && password === '12345') {
+                alert('Giriş başarılı!');
+                
+                // 1 saniye sonra yönlendirme işlemi yapılacak
+                setTimeout(function() {
+                    window.location.href = 'asci2.html'; // Yönlendirme
+                }, 1000); // 1 saniye bekleme
+            } else {
+                alert('Kullanıcı adı veya şifre hatalı!');
+            }
+        });
+    </script>
 </body>
 </html>
