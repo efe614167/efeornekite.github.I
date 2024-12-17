@@ -3,263 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yemek Menüsü</title>
+    <title>Giriş Yap</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 2.5em;
-            color: #333;
-        }
-
-        .menu-section {
+            font-family: Arial, sans-serif;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .menu-item {
-            width: calc(33.33% - 20px);
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .menu-item label {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #4CAF50;
-            margin-bottom: 10px;
-        }
-
-        .menu-item p {
-            font-size: 1em;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .edit-btn, .delete-btn {
-            background-color: #ff5722;
-            color: white;
-            padding: 8px 16px;
-            font-size: 1em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            width: 100%;
-        }
-
-        .edit-btn:hover, .delete-btn:hover {
-            background-color: #e64a19;
-        }
-
-        footer {
-            text-align: center;
-            font-size: 1em;
-            color: #777;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 10px 0;
-        }
-
-        .add-form {
-            display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 20px;
-            background-color: #fff;
-            margin: 30px auto;
-            width: 80%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
         }
 
-        .add-form input, .add-form textarea {
-            width: 80%;
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        .add-form button {
-            width: 80%;
-            padding: 10px;
+        button {
             background-color: #4CAF50;
             color: white;
+            width: 100%;
+            padding: 12px;
             border: none;
             border-radius: 5px;
+            font-size: 1.2em;
             cursor: pointer;
-            margin-top: 10px;
         }
 
-        .add-form button:hover {
+        button:hover {
             background-color: #45a049;
         }
 
-        /* Ana sayfaya dön butonu */
-        .back-btn {
-            background-color: #007bff;
-            color: white;
-            padding: 12px 24px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .error {
+            color: red;
+            font-size: 1em;
             text-align: center;
-            display: block;
-            margin: 30px auto;
-        }
-
-        .back-btn:hover {
-            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-    <h1>Yemek Menüsü</h1>
+    <div class="login-container">
+        <h2>Yönetici Girişi</h2>
+        <form id="login-form">
+            <label for="username">Kullanıcı Adı:</label>
+            <input type="text" id="username" name="username" required>
 
-    <!-- Ürün Ekleme Formu -->
-    <div class="add-form">
-        <h2>Yeni Ürün Ekle</h2>
-        <input type="text" id="ad" placeholder="Yemek Adı" required>
-        <input type="number" id="fiyat" placeholder="Yemek Fiyatı" required>
-        <textarea id="aciklama" placeholder="Yemek Açıklaması" required></textarea>
-        <input type="url" id="resim" placeholder="Yemek Resim URL'si" required>
-        <button onclick="addYemek()">Ürün Ekle</button>
+            <label for="password">Şifre:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Giriş Yap</button>
+            <div class="error" id="error-message"></div>
+        </form>
     </div>
 
-    <!-- Yemekler Buraya Listelenecek -->
-    <div class="menu-section" id="menu-section"></div>
-
-    <!-- Ana Sayfaya Dön Butonu -->
-    <button class="back-btn" onclick="goBack()">Ana Sayfaya Dön</button>
-
-    <footer>
-        <p>&copy; 2024 Yemek Menüsü</p>
-    </footer>
-
     <script>
-        // Sayfa yüklendiğinde yemekleri yerleştir
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMenu();  // Yemekleri ekrana yerleştir
-        });
+        // Giriş formu submit event listener'ı
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Sayfanın yenilenmesini engelle
 
-        // Yemekleri LocalStorage'dan al ve sayfada göster
-        function renderMenu() {
-            const yemekler = JSON.parse(localStorage.getItem("yemekler")) || [];
-            const menuSection = document.getElementById("menu-section");
-            menuSection.innerHTML = "";  // Önceki yemekleri temizle
+            // Kullanıcı adı ve şifreyi al
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-            // Yemekleri listele
-            yemekler.forEach(yemek => {
-                const yemekItem = document.createElement("div");
-                yemekItem.classList.add("menu-item");
-
-                yemekItem.innerHTML = `
-                    <img src="${yemek.resim}" alt="${yemek.ad}">
-                    <label>${yemek.ad} - ${yemek.fiyat} TL</label>
-                    <p>${yemek.aciklama}</p>
-                    <button class="edit-btn" onclick="updateFiyat(${yemek.id})">Fiyatı Düzenle</button>
-                    <button class="delete-btn" onclick="deleteYemek(${yemek.id})">Yemek Sil</button>
-                `;
-
-                menuSection.appendChild(yemekItem);
-            });
-        }
-
-        // Yemek silme işlemi
-        function deleteYemek(id) {
-            let yemekler = JSON.parse(localStorage.getItem("yemekler")) || [];
-            yemekler = yemekler.filter(yemek => yemek.id !== id);
-            localStorage.setItem("yemekler", JSON.stringify(yemekler));
-            renderMenu();  // Menü tekrar güncellenir
-        }
-
-        // Fiyat düzenleme işlemi
-        function updateFiyat(id) {
-            const yemekler = JSON.parse(localStorage.getItem("yemekler")) || [];
-            const yemek = yemekler.find(item => item.id === id);
-            const yeniFiyat = prompt("Yeni fiyatı girin:", yemek.fiyat);
-            if (yeniFiyat !== null) {
-                yemek.fiyat = parseFloat(yeniFiyat);
-                localStorage.setItem("yemekler", JSON.stringify(yemekler));
-                renderMenu();  // Menü tekrar güncellenir
-            }
-        }
-
-        // Yeni yemek ekleme
-        function addYemek() {
-            const ad = document.getElementById("ad").value;
-            const fiyat = parseFloat(document.getElementById("fiyat").value);
-            const aciklama = document.getElementById("aciklama").value;
-            const resim = document.getElementById("resim").value;
-
-            if (ad && fiyat && aciklama && resim) {
-                const newYemek = {
-                    id: Date.now(),
-                    ad: ad,
-                    fiyat: fiyat,
-                    aciklama: aciklama,
-                    resim: resim
-                };
-
-                let yemekler = JSON.parse(localStorage.getItem("yemekler")) || [];
-                yemekler.push(newYemek);
-                localStorage.setItem("yemekler", JSON.stringify(yemekler));
-
-                // Menü tekrar güncellenir
-                renderMenu();
-
-                // Formu temizle
-                document.getElementById("ad").value = "";
-                document.getElementById("fiyat").value = "";
-                document.getElementById("aciklama").value = "";
-                document.getElementById("resim").value = "";
-
-                // Sayfayı güncelle
-                window.location.reload();
+            // Kullanıcı adı ve şifre doğrulama
+            if (username === 'admin' && password === '12345') {
+                // Başarılı giriş: admin2.html'e yönlendir
+                window.location.href = 'admin2.html';
             } else {
-                alert("Lütfen tüm alanları doldurun.");
+                // Hatalı giriş: Hata mesajı göster
+                document.getElementById('error-message').textContent = 'Kullanıcı adı veya şifre yanlış.';
             }
-        }
-
-        // Ana sayfaya dönme işlevi
-        function goBack() {
-            localStorage.removeItem("yemekler"); // Verileri temizle
-            window.location.href = "index.html"; // Ana sayfaya yönlendir
-        }
+        });
     </script>
 
 </body>
