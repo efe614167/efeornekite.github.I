@@ -1156,7 +1156,7 @@
 
     </div>
 </div>
-		  <style>
+		 <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
@@ -1167,7 +1167,7 @@
         h1 {
             text-align: center;
             margin-top: 30px;
-            font-size: 2.5em;
+            font-size: 3em; /* Başlık boyutunu büyüttüm */
             color: #333;
         }
 
@@ -1175,57 +1175,68 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 20px;
+            gap: 30px; /* Daha fazla boşluk bıraktım */
             margin-top: 30px;
-            padding: 20px;
+            padding: 30px; /* İçerik alanını büyüttüm */
         }
 
         .menu-item {
-            width: 30%;
+            width: 45%; /* Yemek öğelerinin genişliğini artırdım */
             background-color: white;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px; /* Daha fazla iç boşluk ekledim */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Gölgeyi büyüttüm */
             border-radius: 8px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .menu-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1); /* Hover efektini büyüttüm */
         }
 
         .menu-item img {
             width: 100%;
-            height: 200px;
+            height: 300px; /* Görsellerin boyutunu büyüttüm */
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .menu-item label {
-            font-size: 1.2em;
+            font-size: 1.5em; /* Yemek adının boyutunu büyüttüm */
             font-weight: bold;
             color: #4CAF50;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .menu-item p {
-            font-size: 1em;
+            font-size: 1.2em; /* Açıklama yazısının boyutunu büyüttüm */
             color: #666;
             margin-bottom: 20px;
         }
 
         footer {
             text-align: center;
-            font-size: 1em;
+            font-size: 1.2em; /* Footer yazısının boyutunu büyüttüm */
             color: #777;
             margin-top: 40px;
         }
 
         footer p {
             margin: 10px 0;
+        }
+
+        /* Mobil uyumluluk için düzenleme */
+        @media (max-width: 768px) {
+            .menu-item {
+                width: 100%; /* Mobilde daha geniş görünmesini sağlamak için */
+            }
+
+            h1 {
+                font-size: 2em; /* Mobilde başlık boyutunu küçülttüm */
+            }
         }
     </style>
 </head>
