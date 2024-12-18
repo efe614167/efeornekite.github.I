@@ -62,6 +62,50 @@
             font-size: 1em;
             text-align: center;
         }
+
+        /* Yemek öğeleri için stil */
+        .food-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .food-item {
+            width: 250px; /* Genişliği gerektiği gibi ayarlayabilirsiniz */
+            text-align: center;
+            margin: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .food-item img {
+            width: 100%;
+            max-width: 300px; /* Görsellerin maksimum genişliği */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .food-item h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .food-item p {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* Mobil uyumluluk için düzenleme */
+        @media (max-width: 768px) {
+            .food-item {
+                width: 100%; /* Mobilde daha geniş görünmesini sağlamak için */
+            }
+        }
     </style>
 </head>
 <body>
@@ -78,6 +122,25 @@
             <button type="submit">Giriş Yap</button>
             <div class="error" id="error-message"></div>
         </form>
+    </div>
+
+    <!-- Yemek öğeleri burada listelenecek -->
+    <div class="food-container">
+        <div class="food-item">
+            <img src="path/to/food-image1.jpg" alt="Yemek 1">
+            <h3>Yemek 1</h3>
+            <p>Lezzetli bir yemek açıklaması.</p>
+        </div>
+        <div class="food-item">
+            <img src="path/to/food-image2.jpg" alt="Yemek 2">
+            <h3>Yemek 2</h3>
+            <p>Bir diğer lezzetli yemek açıklaması.</p>
+        </div>
+        <div class="food-item">
+            <img src="path/to/food-image3.jpg" alt="Yemek 3">
+            <h3>Yemek 3</h3>
+            <p>Yemek 3 açıklaması burada.</p>
+        </div>
     </div>
 
     <script>
