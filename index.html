@@ -1156,7 +1156,7 @@
 
     </div>
 </div>
-		 <style>
+			  <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
@@ -1167,7 +1167,7 @@
         h1 {
             text-align: center;
             margin-top: 30px;
-            font-size: 3em; /* Başlık boyutunu büyüttüm */
+            font-size: 2.5em;
             color: #333;
         }
 
@@ -1175,68 +1175,57 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 30px; /* Daha fazla boşluk bıraktım */
+            gap: 20px;
             margin-top: 30px;
-            padding: 30px; /* İçerik alanını büyüttüm */
+            padding: 20px;
         }
 
         .menu-item {
-            width: 45%; /* Yemek öğelerinin genişliğini artırdım */
+            width: 30%;
             background-color: white;
-            padding: 30px; /* Daha fazla iç boşluk ekledim */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Gölgeyi büyüttüm */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .menu-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1); /* Hover efektini büyüttüm */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .menu-item img {
             width: 100%;
-            height: 300px; /* Görsellerin boyutunu büyüttüm */
+            height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .menu-item label {
-            font-size: 1.5em; /* Yemek adının boyutunu büyüttüm */
-            font-weight: bold;
-            color: #4CAF50;
             margin-bottom: 15px;
         }
 
+        .menu-item label {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
         .menu-item p {
-            font-size: 1.2em; /* Açıklama yazısının boyutunu büyüttüm */
+            font-size: 1em;
             color: #666;
             margin-bottom: 20px;
         }
 
         footer {
             text-align: center;
-            font-size: 1.2em; /* Footer yazısının boyutunu büyüttüm */
+            font-size: 1em;
             color: #777;
             margin-top: 40px;
         }
 
         footer p {
             margin: 10px 0;
-        }
-
-        /* Mobil uyumluluk için düzenleme */
-        @media (max-width: 768px) {
-            .menu-item {
-                width: 100%; /* Mobilde daha geniş görünmesini sağlamak için */
-            }
-
-            h1 {
-                font-size: 2em; /* Mobilde başlık boyutunu küçülttüm */
-            }
         }
     </style>
 </head>
@@ -1269,11 +1258,11 @@
                 const yemekItem = document.createElement("div");
                 yemekItem.classList.add("menu-item");
 
-                yemekItem.innerHTML = `
+                yemekItem.innerHTML = 
                     <img src="${yemek.resim}" alt="${yemek.ad}">
                     <label>${yemek.ad} - ${yemek.fiyat} TL</label>
                     <p>${yemek.aciklama}</p>
-                `;
+                ;
 
                 menuSection.appendChild(yemekItem);
             });
