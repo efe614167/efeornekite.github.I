@@ -65,18 +65,7 @@
 </div>
 
 	
-	  <script>
-        // Sayfa yüklendiğinde fiyatı güncelle
-        window.onload = function() {
-            var newPrice = localStorage.getItem('mercimek-price');
-            if (newPrice) {
-                // Fiyatı güncelle
-                document.querySelector('.price').textContent = newPrice + ' TL';
-                // data-price özelliğini de güncelle
-                document.querySelector('.menu-item').setAttribute('data-price', newPrice);
-            }
-        };
-    </script>
+
         <div class="menu-item" data-name="ezogelin" data-price="40">
             <img src="ezo.jfif" alt="ezogelin">
             <label for="corba2">Ezogelin Çorbası - 40 TL</label>
@@ -1257,7 +1246,18 @@
     <footer>
         <p>&copy; 2024 Yemek Menüsü</p>
     </footer>
-
+  <script>
+        // Sayfa yüklendiğinde fiyatı güncelle
+        window.onload = function() {
+            var newPrice = localStorage.getItem('mercimek-price');
+            if (newPrice) {
+                // Fiyatı güncelle
+                document.querySelector('.price').textContent = newPrice + ' TL';
+                // data-price özelliğini de güncelle
+                document.querySelector('.menu-item').setAttribute('data-price', newPrice);
+            }
+        };
+    </script>
     <script>
         // Sayfa yüklendiğinde yemekleri yerleştir
         document.addEventListener("DOMContentLoaded", function() {
