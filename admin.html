@@ -3,102 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Yap</title>
+    <title>Fiyat Düzenle</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #f4f4f9;
             margin: 0;
+            padding: 20px;
+            color: #333;
         }
 
-        .login-container {
-            background-color: white;
-            padding: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            width: 300px;
+        h1 {
+            text-align: center;
+            color: #5c67f2;
         }
 
         h2 {
-            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        div {
             margin-bottom: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         label {
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            display: block;
+            font-weight: bold;
         }
 
-        input[type="text"], input[type="password"] {
+        input[type="number"] {
             width: 100%;
             padding: 10px;
-            margin-bottom: 20px;
+            margin-top: 8px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
 
         button {
-            background-color: #4CAF50;
-            color: white;
-            width: 100%;
-            padding: 12px;
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
             border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
+            border-radius: 4px;
+            background-color: #5c67f2;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #4b56d0;
         }
 
-        .error {
-            color: red;
-            font-size: 1em;
+        button:active {
+            background-color: #3a44b3;
+        }
+
+        .button-container {
             text-align: center;
         }
     </style>
 </head>
 <body>
+    <h1>Çorba Fiyatlarını Düzenleyin</h1>
+    
+    <!-- Mercimek Çorbası -->
+    <div>
+        <h2>Mercimek Çorbası</h2>
+        <label for="mercimek-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="mercimek-price" placeholder="Fiyatı girin" />
+    </div>
+    
+    <!-- Ezogelin Çorbası -->
+    <div>
+        <h2>Ezogelin Çorbası</h2>
+        <label for="ezogelin-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="ezogelin-price" placeholder="Fiyatı girin" />
+    </div>
 
-    <div class="login-container">
-        <h2>Yönetici Girişi</h2>
-        <form id="login-form">
-            <label for="username">Kullanıcı Adı:</label>
-            <input type="text" id="username" name="username" required>
+    <!-- Kelle Paça Çorbası -->
+    <div>
+        <h2>Kelle Paça Çorbası</h2>
+        <label for="kellepaca-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="kellepaca-price" placeholder="Fiyatı girin" />
+    </div>
 
-            <label for="password">Şifre:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Giriş Yap</button>
-            <div class="error" id="error-message"></div>
-        </form>
+    <!-- Domates Çorbası -->
+    <div>
+        <h2>Domates Çorbası</h2>
+        <label for="domates-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="domates-price" placeholder="Fiyatı girin" />
+    </div>
+    
+    <!-- Tarator Çorbası (Yeni Eklendi) -->
+    <div>
+        <h2>Tarator Çorbası</h2>
+        <label for="tarator-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="tarator-price" placeholder="Fiyatı girin" />
+    </div>
+    
+    <!-- Kaydet ve Ana Sayfa Butonları -->
+    <div class="button-container">
+        <button id="save-prices">Fiyatları Kaydet</button>
+        <button onclick="window.location.href='index.html';">Ana Sayfaya Dön</button>
     </div>
 
     <script>
-        // Giriş formu submit event listener'ı
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Sayfanın yenilenmesini engelle
+        // Sayfa yüklendiğinde, LocalStorage'dan fiyatları çekip ekranda güncelle
+        window.onload = function() {
+            var mercimekPrice = localStorage.getItem('mercimek-price');
+            var ezogelinPrice = localStorage.getItem('ezogelin-price');
+            var kellepacaPrice = localStorage.getItem('kellepaca-price');
+            var domatesPrice = localStorage.getItem('domates-price');
+            var taratorPrice = localStorage.getItem('tarator-price');  // Tarator fiyatını ekledik
 
-            // Kullanıcı adı ve şifreyi al
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            if (mercimekPrice) {
+                document.getElementById('mercimek-price').value = mercimekPrice;
+            }
+            if (ezogelinPrice) {
+                document.getElementById('ezogelin-price').value = ezogelinPrice;
+            }
+            if (kellepacaPrice) {
+                document.getElementById('kellepaca-price').value = kellepacaPrice;
+            }
+            if (domatesPrice) {
+                document.getElementById('domates-price').value = domatesPrice;
+            }
+            if (taratorPrice) {
+                document.getElementById('tarator-price').value = taratorPrice;  // Tarator fiyatını da güncelledik
+            }
+        };
 
-            // Kullanıcı adı ve şifre doğrulama
-            if (username === 'admin' && password === '12345') {
-                // Başarılı giriş: admin2.html'e yönlendir
-                window.location.href = 'admin2.html';
-            } else {
-                // Hatalı giriş: Hata mesajı göster
-                document.getElementById('error-message').textContent = 'Kullanıcı adı veya şifre yanlış.';
+        // Fiyatları kaydetme butonuna tıklanınca çalışacak fonksiyon
+        document.getElementById('save-prices').addEventListener('click', function() {
+            var mercimekPrice = document.getElementById('mercimek-price').value.trim();
+            var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
+            var kellepacaPrice = document.getElementById('kellepaca-price').value.trim();
+            var domatesPrice = document.getElementById('domates-price').value.trim();
+            var taratorPrice = document.getElementById('tarator-price').value.trim();  // Tarator fiyatını alıyoruz
+
+            // Mercimek Fiyatı
+            if (mercimekPrice && !isNaN(mercimekPrice)) {
+                localStorage.setItem('mercimek-price', mercimekPrice);
+                alert('Mercimek Çorbası fiyatı başarıyla kaydedildi!');
+            } else if (mercimekPrice !== "") {
+                alert('Lütfen geçerli bir Mercimek Çorbası fiyatı girin.');
+            }
+
+            // Ezogelin Fiyatı
+            if (ezogelinPrice && !isNaN(ezogelinPrice)) {
+                localStorage.setItem('ezogelin-price', ezogelinPrice);
+                alert('Ezogelin Çorbası fiyatı başarıyla kaydedildi!');
+            } else if (ezogelinPrice !== "") {
+                alert('Lütfen geçerli bir Ezogelin Çorbası fiyatı girin.');
+            }
+
+            // Kelle Paça Fiyatı
+            if (kellepacaPrice && !isNaN(kellepacaPrice)) {
+                localStorage.setItem('kellepaca-price', kellepacaPrice);
+                alert('Kelle Paça Çorbası fiyatı başarıyla kaydedildi!');
+            } else if (kellepacaPrice !== "") {
+                alert('Lütfen geçerli bir Kelle Paça Çorbası fiyatı girin.');
+            }
+
+            // Domates Fiyatı
+            if (domatesPrice && !isNaN(domatesPrice)) {
+                localStorage.setItem('domates-price', domatesPrice);
+                alert('Domates Çorbası fiyatı başarıyla kaydedildi!');
+            } else if (domatesPrice !== "") {
+                alert('Lütfen geçerli bir Domates Çorbası fiyatı girin.');
+            }
+
+            // Tarator Fiyatı (Yeni Eklendi)
+            if (taratorPrice && !isNaN(taratorPrice)) {
+                localStorage.setItem('tarator-price', taratorPrice);
+                alert('Tarator Çorbası fiyatı başarıyla kaydedildi!');
+            } else if (taratorPrice !== "") {
+                alert('Lütfen geçerli bir Tarator Çorbası fiyatı girin.');
             }
         });
     </script>
-
 </body>
 </html>
