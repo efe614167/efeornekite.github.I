@@ -195,7 +195,7 @@
         function updateSoupPrice(soupName) {
             var price = localStorage.getItem(`${soupName}-price`);
             if (price) {
-                var menuItem = document.querySelector(`.menu-item[data-name="${soupName}"]`);
+                var menuItem = document.querySelector(`.menu-item[data-name="${soupName.toLowerCase()}"]`);  // Küçük harf ile eşleşme sağlanıyor
                 if (menuItem) {
                     menuItem.setAttribute('data-price', price);
                     menuItem.querySelector('.price').textContent = price;
@@ -208,8 +208,8 @@
             }
         }
 
-        // Fiyat güncellemesi yapılacak çorbalar
-        const soups = ['mercimek', 'ezogelin', 'Kelle paça', 'domates','tarator'];
+        // Fiyat güncellemesi yapılacak çorbalar (Düzgün isimlerle)
+        const soups = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator'];  // Kelle paça ve tarator eklendi
         soups.forEach(updateSoupPrice);
     };
 </script>
