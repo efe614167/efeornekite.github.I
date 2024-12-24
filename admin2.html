@@ -106,6 +106,13 @@
         <label for="tarator-price">Yeni Fiyat (TL): </label>
         <input type="number" id="tarator-price" placeholder="Fiyatı girin" />
     </div>
+
+    <!-- Yayla Çorbası (Yeni Eklendi) -->
+    <div>
+        <h2>Yayla Çorbası</h2>
+        <label for="yayla-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="yayla-price" placeholder="Fiyatı girin" />
+    </div>
     
     <!-- Kaydet ve Ana Sayfa Butonları -->
     <div class="button-container">
@@ -120,7 +127,8 @@
             var ezogelinPrice = localStorage.getItem('ezogelin-price');
             var kellepacaPrice = localStorage.getItem('kellepaca-price');
             var domatesPrice = localStorage.getItem('domates-price');
-            var taratorPrice = localStorage.getItem('tarator-price');  // Tarator fiyatını ekledik
+            var taratorPrice = localStorage.getItem('tarator-price');
+            var yaylaPrice = localStorage.getItem('yayla-price');  // Yayla fiyatını ekledik
 
             if (mercimekPrice) {
                 document.getElementById('mercimek-price').value = mercimekPrice;
@@ -135,7 +143,10 @@
                 document.getElementById('domates-price').value = domatesPrice;
             }
             if (taratorPrice) {
-                document.getElementById('tarator-price').value = taratorPrice;  // Tarator fiyatını da güncelledik
+                document.getElementById('tarator-price').value = taratorPrice;
+            }
+            if (yaylaPrice) {
+                document.getElementById('yayla-price').value = yaylaPrice;  // Yayla fiyatını da güncelledik
             }
         };
 
@@ -145,50 +156,55 @@
             var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
             var kellepacaPrice = document.getElementById('kellepaca-price').value.trim();
             var domatesPrice = document.getElementById('domates-price').value.trim();
-            var taratorPrice = document.getElementById('tarator-price').value.trim();  // Tarator fiyatını alıyoruz
+            var taratorPrice = document.getElementById('tarator-price').value.trim();
+            var yaylaPrice = document.getElementById('yayla-price').value.trim();  // Yayla fiyatını alıyoruz
 
-            // Fiyatları kontrol et ve kaydet
-            var valid = true;
-
-            // Fiyatların geçerli olup olmadığını kontrol et
+            // Mercimek Fiyatı
             if (mercimekPrice && !isNaN(mercimekPrice)) {
                 localStorage.setItem('mercimek-price', mercimekPrice);
+                alert('Mercimek Çorbası fiyatı başarıyla kaydedildi!');
             } else if (mercimekPrice !== "") {
                 alert('Lütfen geçerli bir Mercimek Çorbası fiyatı girin.');
-                valid = false;
             }
 
+            // Ezogelin Fiyatı
             if (ezogelinPrice && !isNaN(ezogelinPrice)) {
                 localStorage.setItem('ezogelin-price', ezogelinPrice);
+                alert('Ezogelin Çorbası fiyatı başarıyla kaydedildi!');
             } else if (ezogelinPrice !== "") {
                 alert('Lütfen geçerli bir Ezogelin Çorbası fiyatı girin.');
-                valid = false;
             }
 
+            // Kelle Paça Fiyatı
             if (kellepacaPrice && !isNaN(kellepacaPrice)) {
                 localStorage.setItem('kellepaca-price', kellepacaPrice);
+                alert('Kelle Paça Çorbası fiyatı başarıyla kaydedildi!');
             } else if (kellepacaPrice !== "") {
                 alert('Lütfen geçerli bir Kelle Paça Çorbası fiyatı girin.');
-                valid = false;
             }
 
+            // Domates Fiyatı
             if (domatesPrice && !isNaN(domatesPrice)) {
                 localStorage.setItem('domates-price', domatesPrice);
+                alert('Domates Çorbası fiyatı başarıyla kaydedildi!');
             } else if (domatesPrice !== "") {
                 alert('Lütfen geçerli bir Domates Çorbası fiyatı girin.');
-                valid = false;
             }
 
+            // Tarator Fiyatı (Yeni Eklendi)
             if (taratorPrice && !isNaN(taratorPrice)) {
                 localStorage.setItem('tarator-price', taratorPrice);
+                alert('Tarator Çorbası fiyatı başarıyla kaydedildi!');
             } else if (taratorPrice !== "") {
                 alert('Lütfen geçerli bir Tarator Çorbası fiyatı girin.');
-                valid = false;
             }
 
-            if (valid) {
-                alert('Fiyatlar başarıyla kaydedildi!');
-                window.location.href = "index.html"; // Ana sayfaya yönlendirme
+            // Yayla Çorbası Fiyatı (Yeni Eklendi)
+            if (yaylaPrice && !isNaN(yaylaPrice)) {
+                localStorage.setItem('yayla-price', yaylaPrice);
+                alert('Yayla Çorbası fiyatı başarıyla kaydedildi!');
+            } else if (yaylaPrice !== "") {
+                alert('Lütfen geçerli bir Yayla Çorbası fiyatı girin.');
             }
         });
     </script>
