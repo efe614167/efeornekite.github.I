@@ -107,6 +107,28 @@
     </div>
 
     <script>
+        // Sayfa yüklendiğinde, LocalStorage'dan fiyatları çekip ekranda güncelle
+        window.onload = function() {
+            var mercimekPrice = localStorage.getItem('mercimek-price');
+            var ezogelinPrice = localStorage.getItem('ezogelin-price');
+            var kellepacaPrice = localStorage.getItem('kellepaca-price');
+            var domatesPrice = localStorage.getItem('domates-price');
+
+            if (mercimekPrice) {
+                document.getElementById('mercimek-price').value = mercimekPrice;
+            }
+            if (ezogelinPrice) {
+                document.getElementById('ezogelin-price').value = ezogelinPrice;
+            }
+            if (kellepacaPrice) {
+                document.getElementById('kellepaca-price').value = kellepacaPrice;
+            }
+            if (domatesPrice) {
+                document.getElementById('domates-price').value = domatesPrice;
+            }
+        };
+
+        // Fiyatları kaydetme butonuna tıklanınca çalışacak fonksiyon
         document.getElementById('save-prices').addEventListener('click', function() {
             var mercimekPrice = document.getElementById('mercimek-price').value.trim();
             var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
