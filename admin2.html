@@ -96,55 +96,7 @@
         <button onclick="window.location.href='index.html';">Ana Sayfaya Dön</button>
     </div>
 
-    <script>
-        // Sayfa yüklendiğinde, LocalStorage'dan fiyatları çekip ekranda güncelle
-        window.onload = function() {
-            var koftePrice = localStorage.getItem('kofte-price');
-            var pizzaPrice = localStorage.getItem('pizza-price');
-            var koriPrice = localStorage.getItem('kori-price');
-
-            if (koftePrice) {
-                document.getElementById('kofte-price').value = koftePrice;
-            }
-            if (pizzaPrice) {
-                document.getElementById('pizza-price').value = pizzaPrice;
-            }
-            if (koriPrice) {
-                document.getElementById('kori-price').value = koriPrice;
-            }
-        };
-
-        // Fiyatları kaydetme butonuna tıklanınca çalışacak fonksiyon
-        document.getElementById('save-prices').addEventListener('click', function() {
-            var koftePrice = document.getElementById('kofte-price').value.trim();
-            var pizzaPrice = document.getElementById('pizza-price').value.trim();
-            var koriPrice = document.getElementById('kori-price').value.trim();
-
-            // Köfte Fiyatı
-            if (koftePrice && !isNaN(koftePrice)) {
-                localStorage.setItem('kofte-price', koftePrice);
-                alert('Köfte fiyatı başarıyla kaydedildi!');
-            } else if (koftePrice !== "") {
-                alert('Lütfen geçerli bir Köfte fiyatı girin.');
-            }
-
-            // Pizza Fiyatı
-            if (pizzaPrice && !isNaN(pizzaPrice)) {
-                localStorage.setItem('pizza-price', pizzaPrice);
-                alert('Pizza fiyatı başarıyla kaydedildi!');
-            } else if (pizzaPrice !== "") {
-                alert('Lütfen geçerli bir Pizza fiyatı girin.');
-            }
-
-            // Köri Tavuk Fiyatı
-            if (koriPrice && !isNaN(koriPrice)) {
-                localStorage.setItem('kori-price', koriPrice);
-                alert('Köri Tavuk fiyatı başarıyla kaydedildi!');
-            } else if (koriPrice !== "") {
-                alert('Lütfen geçerli bir Köri Tavuk fiyatı girin.');
-            }
-        });
-    </script>
+  
     <h1>Çorba Fiyatlarını Düzenleyin</h1>
     
     <!-- Mercimek Çorbası -->
@@ -280,6 +232,55 @@
                 alert('Yayla Çorbası fiyatı başarıyla kaydedildi!');
             } else if (yaylaPrice !== "") {
                 alert('Lütfen geçerli bir Yayla Çorbası fiyatı girin.');
+            }
+        });
+    </script>
+	  <script>
+        // Sayfa yüklendiğinde, LocalStorage'dan fiyatları çekip ekranda güncelle
+        window.onload = function() {
+            var koftePrice = localStorage.getItem('kofte-price');
+            var pizzaPrice = localStorage.getItem('pizza-price');
+            var koriPrice = localStorage.getItem('kori-price');
+
+            if (koftePrice) {
+                document.getElementById('kofte-price').value = koftePrice;
+            }
+            if (pizzaPrice) {
+                document.getElementById('pizza-price').value = pizzaPrice;
+            }
+            if (koriPrice) {
+                document.getElementById('kori-price').value = koriPrice;
+            }
+        };
+
+        // Fiyatları kaydetme butonuna tıklanınca çalışacak fonksiyon
+        document.getElementById('save-prices').addEventListener('click', function() {
+            var koftePrice = document.getElementById('kofte-price').value.trim();
+            var pizzaPrice = document.getElementById('pizza-price').value.trim();
+            var koriPrice = document.getElementById('kori-price').value.trim();
+
+            // Köfte Fiyatı
+            if (koftePrice && !isNaN(koftePrice)) {
+                localStorage.setItem('kofte-price', koftePrice);
+                alert('Köfte fiyatı başarıyla kaydedildi!');
+            } else if (koftePrice !== "") {
+                alert('Lütfen geçerli bir Köfte fiyatı girin.');
+            }
+
+            // Pizza Fiyatı
+            if (pizzaPrice && !isNaN(pizzaPrice)) {
+                localStorage.setItem('pizza-price', pizzaPrice);
+                alert('Pizza fiyatı başarıyla kaydedildi!');
+            } else if (pizzaPrice !== "") {
+                alert('Lütfen geçerli bir Pizza fiyatı girin.');
+            }
+
+            // Köri Tavuk Fiyatı
+            if (koriPrice && !isNaN(koriPrice)) {
+                localStorage.setItem('kori-price', koriPrice);
+                alert('Köri Tavuk fiyatı başarıyla kaydedildi!');
+            } else if (koriPrice !== "") {
+                alert('Lütfen geçerli bir Köri Tavuk fiyatı girin.');
             }
         });
     </script>
