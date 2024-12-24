@@ -70,6 +70,81 @@
     </style>
 </head>
 <body>
+	 <div>
+        <h2>Köfte</h2>
+        <label for="kofte-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="kofte-price" placeholder="Fiyatı girin" />
+    </div>
+
+    <!-- Pizza -->
+    <div>
+        <h2>Pizza</h2>
+        <label for="pizza-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="pizza-price" placeholder="Fiyatı girin" />
+    </div>
+
+    <!-- Köri Tavuk -->
+    <div>
+        <h2>Köri Tavuk</h2>
+        <label for="kori-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="kori-price" placeholder="Fiyatı girin" />
+    </div>
+
+    <!-- Kaydet ve Ana Sayfa Butonları -->
+    <div class="button-container">
+        <button id="save-prices">Fiyatları Kaydet</button>
+        <button onclick="window.location.href='index.html';">Ana Sayfaya Dön</button>
+    </div>
+
+    <script>
+        // Sayfa yüklendiğinde, LocalStorage'dan fiyatları çekip ekranda güncelle
+        window.onload = function() {
+            var koftePrice = localStorage.getItem('kofte-price');
+            var pizzaPrice = localStorage.getItem('pizza-price');
+            var koriPrice = localStorage.getItem('kori-price');
+
+            if (koftePrice) {
+                document.getElementById('kofte-price').value = koftePrice;
+            }
+            if (pizzaPrice) {
+                document.getElementById('pizza-price').value = pizzaPrice;
+            }
+            if (koriPrice) {
+                document.getElementById('kori-price').value = koriPrice;
+            }
+        };
+
+        // Fiyatları kaydetme butonuna tıklanınca çalışacak fonksiyon
+        document.getElementById('save-prices').addEventListener('click', function() {
+            var koftePrice = document.getElementById('kofte-price').value.trim();
+            var pizzaPrice = document.getElementById('pizza-price').value.trim();
+            var koriPrice = document.getElementById('kori-price').value.trim();
+
+            // Köfte Fiyatı
+            if (koftePrice && !isNaN(koftePrice)) {
+                localStorage.setItem('kofte-price', koftePrice);
+                alert('Köfte fiyatı başarıyla kaydedildi!');
+            } else if (koftePrice !== "") {
+                alert('Lütfen geçerli bir Köfte fiyatı girin.');
+            }
+
+            // Pizza Fiyatı
+            if (pizzaPrice && !isNaN(pizzaPrice)) {
+                localStorage.setItem('pizza-price', pizzaPrice);
+                alert('Pizza fiyatı başarıyla kaydedildi!');
+            } else if (pizzaPrice !== "") {
+                alert('Lütfen geçerli bir Pizza fiyatı girin.');
+            }
+
+            // Köri Tavuk Fiyatı
+            if (koriPrice && !isNaN(koriPrice)) {
+                localStorage.setItem('kori-price', koriPrice);
+                alert('Köri Tavuk fiyatı başarıyla kaydedildi!');
+            } else if (koriPrice !== "") {
+                alert('Lütfen geçerli bir Köri Tavuk fiyatı girin.');
+            }
+        });
+    </script>
     <h1>Çorba Fiyatlarını Düzenleyin</h1>
     
     <!-- Mercimek Çorbası -->
@@ -87,7 +162,11 @@
     </div>
 
     <!-- Kelle Paça Çorbası -->
-   
+    <div>
+        <h2>Kelle Paça Çorbası</h2>
+        <label for="kellepaca-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="kellepaca-price" placeholder="Fiyatı girin" />
+    </div>
 
     <!-- Domates Çorbası -->
     <div>
@@ -97,7 +176,18 @@
     </div>
     
     <!-- Tarator Çorbası -->
-   
+    <div>
+        <h2>Tarator Çorbası</h2>
+        <label for="tarator-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="tarator-price" placeholder="Fiyatı girin" />
+    </div>
+
+    <!-- Yayla Çorbası (Yeni Eklendi) -->
+    <div>
+        <h2>Yayla Çorbası</h2>
+        <label for="yayla-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="yayla-price" placeholder="Fiyatı girin" />
+    </div>
     
     <!-- Kaydet ve Ana Sayfa Butonları -->
     <div class="button-container">
