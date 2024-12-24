@@ -144,128 +144,75 @@
  	
 <div class="menu-section">
     <h3>Çorbalar</h3>
-   <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiyat Düzenle</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-
-        h1 {
-            text-align: center;
-            color: #5c67f2;
-        }
-
-        .menu-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .menu-item {
-            width: 250px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-item:hover {
-            transform: scale(1.05);
-        }
-
-        .menu-item img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .menu-item label {
-            font-weight: bold;
-            margin-top: 10px;
-            display: block;
-        }
-
-        .quantity-controls {
-            margin-top: 10px;
-        }
-
-        .quantity-controls button {
-            padding: 5px 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .price {
-            color: #5c67f2;
-            font-weight: bold;
-        }
-
-        .menu-item p {
-            font-size: 14px;
-            color: #666;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Çorba Menü Fiyatları</h1>
-
     <div class="menu-items">
-        <!-- Çorbalar -->
-        <div class="menu-item" data-name="mercimek" data-price="50">
-            <img src="MercimekÇorbası.jpg" alt="mercimek">
-            <label for="corba1">Mercimek Çorbası - <span class="price">50</span> TL</label>
-            <p>Yumuşak mercimek ve baharatların mükemmel uyumu, sofralarınızda sıcak bir başlangıç.</p>
-            <div class="quantity-controls">
-                <button type="button" class="decrease">-</button>
-                <span class="quantity">0</span>
-                <button type="button" class="increase">+</button>
-            </div>
-        </div>
+    <div class="menu-item" data-name="mercimek" data-price="50">
+    <img src="MercimekÇorbası.jpg" alt="mercimek">
+    <label for="corba1">Mercimek Çorbası - <span class="price">50</span> TL</label>
+    <p>Yumuşak mercimek ve baharatların mükemmel uyumu, sofralarınızda sıcak bir başlangıç.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
 
-        <div class="menu-item" data-name="ezogelin" data-price="40">
-            <img src="ezo.jfif" alt="ezogelin">
-            <label for="corba2">Ezogelin Çorbası - <span class="price">40</span> TL</label>
-            <p>Bol baharatlı ve zeytinyağlı, geleneksel bir lezzet. Sofranızı şenlendirecek.</p>
-            <div class="quantity-controls">
-                <button type="button" class="decrease">-</button>
-                <span class="quantity">0</span>
-                <button type="button" class="increase">+</button>
-            </div>
-        </div>
+<div class="menu-item" data-name="ezogelin" data-price="40">
+    <img src="ezo.jfif" alt="ezogelin">
+    <label for="corba2">Ezogelin Çorbası - <span class="price">40</span> TL</label>
+    <p>Bol baharatlı ve zeytinyağlı, geleneksel bir lezzet. Sofranızı şenlendirecek.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
 
-        <div class="menu-item" data-name="Kelle paça" data-price="40">
-            <img src="paça.jfif" alt="Kelle paça">
-            <label for="corba3">Kelle Paça Çorbası - <span class="price">40</span> TL</label>
-            <p>Çeşitli etlerin en güzel haliyle hazırlanan, özel baharatlarla zenginleştirilen nefis bir çorba.</p>
-            <div class="quantity-controls">
-                <button type="button" class="decrease">-</button>
-                <span class="quantity">0</span>
-                <button type="button" class="increase">+</button>
-            </div>
-        </div>
+<div class="menu-item" data-name="Kelle paça" data-price="40">
+    <img src="paça.jfif" alt="Kelle paça">
+    <label for="corba3">Kelle Paça Çorbası - <span class="price">40</span> TL</label>
+    <p>Çeşitli etlerin en güzel haliyle hazırlanan, özel baharatlarla zenginleştirilen nefis bir çorba.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
 
-        <div class="menu-item" data-name="domates" data-price="45">
-            <img src="domates.jpeg" alt="domates">
-            <label for="corba4">Domates Çorbası - <span class="price">45</span> TL</label>
-            <p>Özel baharatlarla lezzetlendirilmiş domatesin enfes tatlı ekşi dengesiyle hazırlanmış klasik bir çorba.</p>
-            <div class="quantity-controls">
-                <button type="button" class="decrease">-</button>
-                <span class="quantity">0</span>
-                <button type="button" class="increase">+</button>
-            </div>
-        </div>
+<div class="menu-item" data-name="domates" data-price="45">
+    <img src="domates.jpeg" alt="domates">
+    <label for="corba4">Domates Çorbası - <span class="price">45</span> TL</label>
+    <p>Özel baharatlarla lezzetlendirilmiş domatesin enfes tatlı ekşi dengesiyle hazırlanmış klasik bir çorba.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<script>
+    window.onload = function() {
+        // Çorba fiyatlarını güncelleme fonksiyonu
+        function updateSoupPrice(soupName) {
+            var price = localStorage.getItem(`${soupName}-price`);
+            if (price) {
+                var menuItem = document.querySelector(`.menu-item[data-name="${soupName}"]`);
+                if (menuItem) {
+                    menuItem.setAttribute('data-price', price);
+                    menuItem.querySelector('.price').textContent = price;
+                    console.log(`${soupName} fiyatı başarıyla güncellendi: ${price}`);
+                } else {
+                    console.error(`${soupName} menü öğesi bulunamadı.`);
+                }
+            } else {
+                console.log(`LocalStorage'da ${soupName} fiyatı bulunamadı.`);
+            }
+        }
+
+        // Fiyat güncellemesi yapılacak çorbalar
+        const soups = ['mercimek', 'ezogelin', 'Kelle paça', 'domates','tarator'];
+        soups.forEach(updateSoupPrice);
+    };
+</script>
 
         <div class="menu-item" data-name="tarator" data-price="35">
             <img src="tarator.jfif" alt="tarator">
@@ -277,7 +224,6 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-
         <div class="menu-item" data-name="yayla" data-price="45">
             <img src="yayla.webp" alt="yayla">
             <label for="corba6">Yayla Çorbası - 45 TL</label>
@@ -288,7 +234,6 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-
         <div class="menu-item" data-name="tavuk" data-price="50">
             <img src="tavuk.jfif" alt="tavuk">
             <label for="corba7">Tavuk Çorbası - 50 TL</label>
@@ -299,7 +244,6 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-
         <div class="menu-item" data-name="balık" data-price="55">
             <img src="balık.webp" alt="balık">
             <label for="corba8">Balık Çorbası - 55 TL</label>
@@ -310,7 +254,6 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-
         <div class="menu-item" data-name="karnıbahar" data-price="50">
             <img src="karnıbahar.jpg" alt="karnıbahar">
             <label for="corba9">Karnıbahar Çorbası - 50 TL</label>
@@ -322,7 +265,7 @@
             </div>
         </div>
 
-        <!-- Diğer Çorbalar -->
+        <!-- Devamındaki Çorbalar -->
         <div class="menu-item" data-name="şehriye" data-price="40">
             <img src="sehriye.jfif" alt="şehriye">
             <label for="corba10">Şehriye Çorbası - 40 TL</label>
@@ -333,7 +276,6 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-
         <div class="menu-item" data-name="acılı" data-price="45">
             <img src="acı.jfif" alt="acılı">
             <label for="corba11">Acılı Çorba - 45 TL</label>
@@ -344,7 +286,6 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-
         <div class="menu-item" data-name="sütlü" data-price="30">
             <img src="sutl.jfif" alt="sütlü">
             <label for="corba12">Sütlü Çorba - 30 TL</label>
@@ -355,7 +296,6 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-
         <div class="menu-item" data-name="zeytinyağlı" data-price="40">
             <img src="zeytin.jfif" alt="zeytinyağlı">
             <label for="corba13">Zeytinyağlı Çorba - 40 TL</label>
@@ -366,37 +306,6 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-    </div>
-
-    <script>
-        window.onload = function() {
-            // Fiyatları localStorage'dan güncelleme fonksiyonu
-            function updateSoupPrice(soupName) {
-                var price = localStorage.getItem(`${soupName}-price`);
-                if (price) {
-                    var menuItem = document.querySelector(`.menu-item[data-name="${soupName}"]`);
-                    if (menuItem) {
-                        menuItem.setAttribute('data-price', price);
-                        menuItem.querySelector('.price').textContent = price;
-                        console.log(`${soupName} fiyatı başarıyla güncellendi: ${price}`);
-                    } else {
-                        console.error(`${soupName} menü öğesi bulunamadı.`);
-                    }
-                } else {
-                    console.log(`LocalStorage'da ${soupName} fiyatı bulunamadı.`);
-                }
-            }
-
-            // Fiyat güncellenmesi yapılacak çorbalar
-            const soups = [
-                'mercimek', 'ezogelin', 'Kelle paça', 'domates', 'tarator', 'yayla',
-                'tavuk', 'balık', 'karnıbahar', 'şehriye', 'acılı', 'sütlü', 'zeytinyağlı'
-            ];
-            soups.forEach(updateSoupPrice);
-        };
-    </script>
-</body>
-</html>
         <div class="menu-item" data-name="kısır" data-price="25">
             <img src="kısır.jfif" alt="kısır">
             <label for="corba14">Kısır Çorbası - 25 TL</label>
