@@ -323,6 +323,30 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
+	  <script>
+        window.onload = function() {
+            // Çorba fiyatlarını güncelleme fonksiyonu
+            function updateSoupPrice(soupName) {
+                var price = localStorage.getItem(`${soupName}-price`);
+                if (price) {
+                    var menuItem = document.querySelector(`.menu-item[data-name="${soupName.toLowerCase()}"]`);  // Küçük harf ile eşleşme sağlanıyor
+                    if (menuItem) {
+                        menuItem.setAttribute('data-price', price);
+                        menuItem.querySelector('.price').textContent = `${price} TL`;
+                        console.log(`${soupName} fiyatı başarıyla güncellendi: ${price}`);
+                    } else {
+                        console.error(`${soupName} menü öğesi bulunamadı.`);
+                    }
+                } else {
+                    console.log(`LocalStorage'da ${soupName} fiyatı bulunamadı.`);
+                }
+            }
+
+            // Fiyat güncellemesi yapılacak çorbalar (Düzgün isimlerle)
+            const soups = ['yayla', 'tavuk', 'balık', 'karnıbahar', 'şehriye', 'acılı', 'sütlü', 'zeytinyağlı', 'kısır', 'etli', 'vegan', 'soğan', 'kabak', 'börülce', 'şehriye-tarator', 'etli-mercimek'];
+            soups.forEach(updateSoupPrice);
+        };
+    </script>
         <div class="menu-item" data-name="tavuk" data-price="50">
             <img src="tavuk.jfif" alt="tavuk">
             <label for="corba7">Tavuk Çorbası - 50 TL</label>
