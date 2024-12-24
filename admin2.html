@@ -18,155 +18,175 @@
             color: #5c67f2;
         }
 
-        h2 {
-            margin-top: 20px;
-            color: #333;
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
 
-        div {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .menu-item {
+            width: 250px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            width: 100%;
             border-radius: 8px;
         }
 
-        label {
+        .menu-item label {
             font-weight: bold;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button {
-            display: inline-block;
-            padding: 10px 20px;
             margin-top: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #5c67f2;
-            color: white;
+            display: block;
+        }
+
+        .quantity-controls {
+            margin-top: 10px;
+        }
+
+        .quantity-controls button {
+            padding: 5px 10px;
             font-size: 16px;
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: #4b56d0;
+        .price {
+            color: #5c67f2;
+            font-weight: bold;
         }
 
-        button:active {
-            background-color: #3a44b3;
+        .menu-item p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
         }
 
-        .button-container {
-            text-align: center;
+        .price-input {
+            margin-top: 10px;
+        }
+
+        .price-input input {
+            padding: 5px;
+            font-size: 16px;
+            width: 60px;
+        }
+
+        .save-price-button {
+            background-color: #5c67f2;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .save-price-button:hover {
+            background-color: #3a4ecf;
         }
     </style>
 </head>
 <body>
-    <h1>Çorba Fiyatlarını Düzenleyin</h1>
-    
-    <!-- Mercimek Çorbası -->
-    <div>
-        <h2>Mercimek Çorbası</h2>
-        <label for="mercimek-price">Yeni Fiyat (TL): </label>
-        <input type="number" id="mercimek-price" placeholder="Fiyatı girin" />
-    </div>
-    
-    <!-- Ezogelin Çorbası -->
-    <div>
-        <h2>Ezogelin Çorbası</h2>
-        <label for="ezogelin-price">Yeni Fiyat (TL): </label>
-        <input type="number" id="ezogelin-price" placeholder="Fiyatı girin" />
-    </div>
+    <h1>Çorba Fiyat Düzenleme</h1>
 
-    <!-- Kelle Paça Çorbası -->
-    <div>
-        <h2>Kelle Paça Çorbası</h2>
-        <label for="kellepaca-price">Yeni Fiyat (TL): </label>
-        <input type="number" id="kellepaca-price" placeholder="Fiyatı girin" />
-    </div>
+    <div class="menu-items">
+        <!-- Çorbalar -->
+        <div class="menu-item" data-name="mercimek" data-price="50">
+            <img src="MercimekÇorbası.jpg" alt="mercimek">
+            <label for="corba1">Mercimek Çorbası - <span class="price">50</span> TL</label>
+            <p>Yumuşak mercimek ve baharatların mükemmel uyumu, sofralarınızda sıcak bir başlangıç.</p>
+            <div class="price-input">
+                <input type="number" id="mercimek-price" value="50" step="1" min="0" />
+                <button class="save-price-button" onclick="savePrice('mercimek')">Fiyatı Kaydet</button>
+            </div>
+        </div>
 
-    <!-- Domates Çorbası -->
-    <div>
-        <h2>Domates Çorbası</h2>
-        <label for="domates-price">Yeni Fiyat (TL): </label>
-        <input type="number" id="domates-price" placeholder="Fiyatı girin" />
-    </div>
-    
-    <!-- Kaydet ve Ana Sayfa Butonları -->
-    <div class="button-container">
-        <button id="save-prices">Fiyatları Kaydet</button>
-        <button onclick="window.location.href='index.html';">Ana Sayfaya Dön</button>
+        <div class="menu-item" data-name="ezogelin" data-price="40">
+            <img src="ezo.jfif" alt="ezogelin">
+            <label for="corba2">Ezogelin Çorbası - <span class="price">40</span> TL</label>
+            <p>Bol baharatlı ve zeytinyağlı, geleneksel bir lezzet. Sofranızı şenlendirecek.</p>
+            <div class="price-input">
+                <input type="number" id="ezogelin-price" value="40" step="1" min="0" />
+                <button class="save-price-button" onclick="savePrice('ezogelin')">Fiyatı Kaydet</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Kelle paça" data-price="40">
+            <img src="paça.jfif" alt="Kelle paça">
+            <label for="corba3">Kelle Paça Çorbası - <span class="price">40</span> TL</label>
+            <p>Çeşitli etlerin en güzel haliyle hazırlanan, özel baharatlarla zenginleştirilen nefis bir çorba.</p>
+            <div class="price-input">
+                <input type="number" id="kelle-paca-price" value="40" step="1" min="0" />
+                <button class="save-price-button" onclick="savePrice('Kelle paça')">Fiyatı Kaydet</button>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="domates" data-price="45">
+            <img src="domates.jpeg" alt="domates">
+            <label for="corba4">Domates Çorbası - <span class="price">45</span> TL</label>
+            <p>Özel baharatlarla lezzetlendirilmiş domatesin enfes tatlı ekşi dengesiyle hazırlanmış klasik bir çorba.</p>
+            <div class="price-input">
+                <input type="number" id="domates-price" value="45" step="1" min="0" />
+                <button class="save-price-button" onclick="savePrice('domates')">Fiyatı Kaydet</button>
+            </div>
+        </div>
+
+        <!-- Diğer Çorbalar -->
+        <div class="menu-item" data-name="tarator" data-price="35">
+            <img src="tarator.jfif" alt="tarator">
+            <label for="corba5">Tarator Çorbası - <span class="price">35</span> TL</label>
+            <p>Yoğurt ve zeytinyağının mükemmel birleşimi, içinde ince ince doğranmış salatalık ve sarımsak var.</p>
+            <div class="price-input">
+                <input type="number" id="tarator-price" value="35" step="1" min="0" />
+                <button class="save-price-button" onclick="savePrice('tarator')">Fiyatı Kaydet</button>
+            </div>
+        </div>
+
+        <!-- Diğer Çorbalar Burada Eklenebilir -->
     </div>
 
     <script>
-        // Sayfa yüklendiğinde, LocalStorage'dan fiyatları çekip ekranda güncelle
+        // Çorba fiyatlarını kaydetme fonksiyonu
+        function savePrice(soupName) {
+            const priceInput = document.getElementById(`${soupName}-price`);
+            const newPrice = priceInput.value;
+            if (newPrice) {
+                // localStorage'da yeni fiyatı kaydetme
+                localStorage.setItem(`${soupName}-price`, newPrice);
+
+                // Fiyatı menüde güncelleme
+                const menuItem = document.querySelector(`.menu-item[data-name="${soupName}"]`);
+                const priceSpan = menuItem.querySelector('.price');
+                priceSpan.textContent = newPrice;
+                alert(`${soupName} fiyatı ${newPrice} TL olarak güncellendi!`);
+            }
+        }
+
+        // Sayfa yüklendiğinde localStorage'dan fiyatları alıp menüyü güncelleme
         window.onload = function() {
-            var mercimekPrice = localStorage.getItem('mercimek-price');
-            var ezogelinPrice = localStorage.getItem('ezogelin-price');
-            var kellepacaPrice = localStorage.getItem('kellepaca-price');
-            var domatesPrice = localStorage.getItem('domates-price');
-
-            if (mercimekPrice) {
-                document.getElementById('mercimek-price').value = mercimekPrice;
-            }
-            if (ezogelinPrice) {
-                document.getElementById('ezogelin-price').value = ezogelinPrice;
-            }
-            if (kellepacaPrice) {
-                document.getElementById('kellepaca-price').value = kellepacaPrice;
-            }
-            if (domatesPrice) {
-                document.getElementById('domates-price').value = domatesPrice;
-            }
+            const soups = [
+                'mercimek', 'ezogelin', 'Kelle paça', 'domates', 'tarator'
+            ];
+            soups.forEach(function(soupName) {
+                const savedPrice = localStorage.getItem(`${soupName}-price`);
+                if (savedPrice) {
+                    const menuItem = document.querySelector(`.menu-item[data-name="${soupName}"]`);
+                    const priceSpan = menuItem.querySelector('.price');
+                    priceSpan.textContent = savedPrice;
+                    const priceInput = document.getElementById(`${soupName}-price`);
+                    priceInput.value = savedPrice;
+                }
+            });
         };
-
-        // Fiyatları kaydetme butonuna tıklanınca çalışacak fonksiyon
-        document.getElementById('save-prices').addEventListener('click', function() {
-            var mercimekPrice = document.getElementById('mercimek-price').value.trim();
-            var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
-            var kellepacaPrice = document.getElementById('kellepaca-price').value.trim();
-            var domatesPrice = document.getElementById('domates-price').value.trim();
-
-            // Mercimek Fiyatı
-            if (mercimekPrice && !isNaN(mercimekPrice)) {
-                localStorage.setItem('mercimek-price', mercimekPrice);
-                alert('Mercimek Çorbası fiyatı başarıyla kaydedildi!');
-            } else if (mercimekPrice !== "") {
-                alert('Lütfen geçerli bir Mercimek Çorbası fiyatı girin.');
-            }
-
-            // Ezogelin Fiyatı
-            if (ezogelinPrice && !isNaN(ezogelinPrice)) {
-                localStorage.setItem('ezogelin-price', ezogelinPrice);
-                alert('Ezogelin Çorbası fiyatı başarıyla kaydedildi!');
-            } else if (ezogelinPrice !== "") {
-                alert('Lütfen geçerli bir Ezogelin Çorbası fiyatı girin.');
-            }
-
-            // Kelle Paça Fiyatı
-            if (kellepacaPrice && !isNaN(kellepacaPrice)) {
-                localStorage.setItem('kellepaca-price', kellepacaPrice);
-                alert('Kelle Paça Çorbası fiyatı başarıyla kaydedildi!');
-            } else if (kellepacaPrice !== "") {
-                alert('Lütfen geçerli bir Kelle Paça Çorbası fiyatı girin.');
-            }
-
-            // Domates Fiyatı
-            if (domatesPrice && !isNaN(domatesPrice)) {
-                localStorage.setItem('domates-price', domatesPrice);
-                alert('Domates Çorbası fiyatı başarıyla kaydedildi!');
-            } else if (domatesPrice !== "") {
-                alert('Lütfen geçerli bir Domates Çorbası fiyatı girin.');
-            }
-        });
     </script>
 </body>
 </html>
