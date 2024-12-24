@@ -3,147 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Yap</title>
+    <title>Çorba Menüsü Düzenleme Sayfası</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
-
-        .login-container {
-            background-color: white;
-            padding: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            width: 300px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .error {
-            color: red;
-            font-size: 1em;
-            text-align: center;
-        }
-
-        /* Yemek öğeleri için stil */
-        .food-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
+            background-color: #f9f9f9;
             padding: 20px;
         }
-
-        .food-item {
-            width: 250px; /* Genişliği gerektiği gibi ayarlayabilirsiniz */
-            text-align: center;
-            margin: 10px;
+        .menu-item {
             background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .food-item img {
-            width: 100%;
-            max-width: 300px; /* Görsellerin maksimum genişliği */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .food-item h3 {
-            font-size: 1.5em;
+            padding: 15px;
             margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        .food-item p {
-            font-size: 1.1em;
-            color: #333;
+        .menu-item img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 20px;
         }
-
-        /* Mobil uyumluluk için düzenleme */
-        @media (max-width: 768px) {
-            .food-item {
-                width: 100%; /* Mobilde daha geniş görünmesini sağlamak için */
-            }
+        .menu-item label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .menu-item input, .menu-item textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .menu-item button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-item button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
 
-    <div class="login-container">
-        <h2>Yönetici Girişi</h2>
-        <form id="login-form">
-            <label for="username">Kullanıcı Adı:</label>
-            <input type="text" id="username" name="username" required>
+    <h1>Çorba Menüsü Düzenleme Sayfası</h1>
 
-            <label for="password">Şifre:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Giriş Yap</button>
-            <div class="error" id="error-message"></div>
-        </form>
+    <div class="menu-item" id="item1">
+        <h3>Mercimek Çorbası</h3>
+        <img src="MercimekÇorbası.jpg" alt="mercimek">
+        <label for="name1">Çorba Adı:</label>
+        <input type="text" id="name1" value="Mercimek Çorbası">
+        <label for="price1">Fiyat:</label>
+        <input type="text" id="price1" value="50">
+        <label for="description1">Açıklama:</label>
+        <textarea id="description1">Yumuşak mercimek ve baharatların mükemmel uyumu, sofralarınızda sıcak bir başlangıç.</textarea>
+        <button onclick="saveChanges('item1')">Değişiklikleri Kaydet</button>
     </div>
 
-  
+    <div class="menu-item" id="item2">
+        <h3>Ezogelin Çorbası</h3>
+        <img src="ezo.jfif" alt="ezogelin">
+        <label for="name2">Çorba Adı:</label>
+        <input type="text" id="name2" value="Ezogelin Çorbası">
+        <label for="price2">Fiyat:</label>
+        <input type="text" id="price2" value="40">
+        <label for="description2">Açıklama:</label>
+        <textarea id="description2">Bol baharatlı ve zeytinyağlı, geleneksel bir lezzet. Sofranızı şenlendirecek.</textarea>
+        <button onclick="saveChanges('item2')">Değişiklikleri Kaydet</button>
+    </div>
+
+    <div class="menu-item" id="item3">
+        <h3>Domates Çorbası</h3>
+        <img src="domates.jpeg" alt="domates">
+        <label for="name3">Çorba Adı:</label>
+        <input type="text" id="name3" value="Domates Çorbası">
+        <label for="price3">Fiyat:</label>
+        <input type="text" id="price3" value="45">
+        <label for="description3">Açıklama:</label>
+        <textarea id="description3">Özel baharatlarla lezzetlendirilmiş domatesin enfes tatlı ekşi dengesiyle hazırlanmış klasik bir çorba.</textarea>
+        <button onclick="saveChanges('item3')">Değişiklikleri Kaydet</button>
+    </div>
+
+    <!-- Diğer çorbalar için aynı yapıyı tekrarlayabilirsiniz. -->
+
     <script>
-        // Giriş formu submit event listener'ı
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Sayfanın yenilenmesini engelle
+        function saveChanges(itemId) {
+            // Her çorba için düzenlenen verileri alalım.
+            var name = document.getElementById('name' + itemId.charAt(itemId.length - 1)).value;
+            var price = document.getElementById('price' + itemId.charAt(itemId.length - 1)).value;
+            var description = document.getElementById('description' + itemId.charAt(itemId.length - 1)).value;
 
-            // Kullanıcı adı ve şifreyi al
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            // Bu verileri konsola yazdırabiliriz (gerçekten kaydetmek için sunucuya gönderilebilir)
+            console.log('Çorba Adı: ' + name);
+            console.log('Fiyat: ' + price);
+            console.log('Açıklama: ' + description);
 
-            // Kullanıcı adı ve şifre doğrulama
-            if (username === 'admin' && password === '12345') {
-                // Başarılı giriş: admin2.html'e yönlendir
-                window.location.href = 'admin2.html';
-            } else {
-                // Hatalı giriş: Hata mesajı göster
-                document.getElementById('error-message').textContent = 'Kullanıcı adı veya şifre yanlış.';
-            }
-        });
+            alert('Değişiklikler Kaydedildi!');
+        }
     </script>
-
 </body>
 </html>
