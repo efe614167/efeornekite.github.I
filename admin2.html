@@ -6,23 +6,46 @@
     <title>Fiyat Düzenle</title>
 </head>
 <body>
-    <h1>Fiyatı Düzenleyin</h1>
+    <h1>Çorba Fiyatlarını Düzenleyin</h1>
     
-    <label for="new-price">Mercimek Çorba Yeni Fiyat (TL): </label>
-    <input type="number" id="new-price" placeholder="Fiyatı girin" />
-    <button id="save-price">Fiyatı Kaydet</button>
+    <!-- Mercimek Çorbası -->
+    <div>
+        <h2>Mercimek Çorbası</h2>
+        <label for="mercimek-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="mercimek-price" placeholder="Fiyatı girin" />
+    </div>
+    
+    <!-- Ezogelin Çorbası -->
+    <div>
+        <h2>Ezogelin Çorbası</h2>
+        <label for="ezogelin-price">Yeni Fiyat (TL): </label>
+        <input type="number" id="ezogelin-price" placeholder="Fiyatı girin" />
+    </div>
+    
+    <button id="save-prices">Fiyatları Kaydet</button>
 
     <!-- Ana Sayfaya Dön Butonu -->
     <button onclick="window.location.href='index.html';">Ana Sayfaya Dön</button>
 
     <script>
-        document.getElementById('save-price').addEventListener('click', function() {
-            var newPrice = document.getElementById('new-price').value.trim(); // Boşlukları temizle
-            if (newPrice && !isNaN(newPrice)) { // Geçerli bir sayı kontrolü
-                localStorage.setItem('mercimek-price', newPrice); // LocalStorage'a kaydet
-                alert('Fiyat başarıyla kaydedildi!');
-            } else {
-                alert('Lütfen geçerli bir fiyat girin.');
+        document.getElementById('save-prices').addEventListener('click', function() {
+            var mercimekPrice = document.getElementById('mercimek-price').value.trim();
+            var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
+
+            // Mercimek Fiyatı
+            if (mercimekPrice && !isNaN(mercimekPrice)) {
+                localStorage.setItem('mercimek-price', mercimekPrice);
+                alert('Mercimek Çorbası fiyatı başarıyla kaydedildi!');
+            } else if (mercimekPrice !== "") {
+                alert('Lütfen geçerli bir Mercimek Çorbası fiyatı girin.');
+            }
+
+            // Ezogelin Fiyatı
+            if (ezogelinPrice && !isNaN(ezogelinPrice)) {
+                localStorage.setItem('ezogelin-price', ezogelinPrice);
+                alert('Ezogelin Çorbası fiyatı başarıyla kaydedildi!');
+            } else if (ezogelinPrice !== "") {
+                alert('Lütfen geçerli bir Ezogelin Çorbası fiyatı girin.');
             }
         });
     </script>
