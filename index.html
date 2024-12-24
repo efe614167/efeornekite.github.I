@@ -406,7 +406,7 @@
         <!-- Önceki Yemekler -->
         <div class="menu-item" data-name="Köfte" data-price="130">
             <img src="images.jfif" alt="Köfte">
-            <label for="yemek1">Köfte - 130 TL</label>
+            <label for="yemek1">Köfte - <span class="price">130</span> TL</label>
             <p>Güzelce marine edilmiş lezzetli köfte.</p>
             <div class="quantity-controls">
                 <button type="button" class="decrease">-</button>
@@ -416,7 +416,7 @@
         </div>
         <div class="menu-item" data-name="Pizza" data-price="150">
             <img src="pizza.jpg" alt="Pizza">
-            <label for="yemek2">Pizza - 150 TL</label>
+            <label for="yemek2">Pizza - <span class="price">150</span> TL</label>
             <p>Taze mozzarella, domates ve fesleğen ile hazırlanan klasik İtalyan pizzası.</p>
             <div class="quantity-controls">
                 <button type="button" class="decrease">-</button>
@@ -426,7 +426,7 @@
         </div>
         <div class="menu-item" data-name="Köri Tavuk" data-price="140">
             <img src="kori-soslu-tavuk-yemekcom.webp" alt="Köri Tavuk">
-            <label for="yemek3">Köri Tavuk - 140 TL</label>
+            <label for="yemek3">Köri Tavuk - <span class="price">140</span> TL</label>
             <p>Zengin ve aromatik bir köri sosunda pişirilmiş tavuk.</p>
             <div class="quantity-controls">
                 <button type="button" class="decrease">-</button>
@@ -434,7 +434,31 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-        
+    </div>
+
+    <script>
+        // Fiyatları 'localStorage' üzerinden alıp güncelleyen fonksiyon
+        function guncelleMenudekiFiyatlar() {
+            // LocalStorage'dan fiyatları al
+            const fiyat1 = localStorage.getItem('yemek1-fiyat');
+            const fiyat2 = localStorage.getItem('yemek2-fiyat');
+            const fiyat3 = localStorage.getItem('yemek3-fiyat');
+
+            // Eğer fiyatlar varsa, menüdeki fiyatları güncelle
+            if (fiyat1) {
+                document.querySelector('.menu-item[data-name="Köfte"] .price').textContent = fiyat1;
+            }
+            if (fiyat2) {
+                document.querySelector('.menu-item[data-name="Pizza"] .price').textContent = fiyat2;
+            }
+            if (fiyat3) {
+                document.querySelector('.menu-item[data-name="Köri Tavuk"] .price').textContent = fiyat3;
+            }
+        }
+
+        // Sayfa yüklendiğinde fiyatları güncelle
+        window.onload = guncelleMenudekiFiyatlar;
+    </script>
         <!-- Yeni Yemekler -->
         <div class="menu-item" data-name="Mantarlı Et Yemeği" data-price="160">
             <img src="mantar.jfif" alt="Mantarlı Et Yemeği">
