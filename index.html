@@ -146,33 +146,16 @@
     <h3>Çorbalar</h3>
     <div class="menu-items">
       <div class="menu-item" data-name="mercimek" data-price="50">
-            <img src="MercimekÇorbası.jpg" alt="mercimek">
-            <label for="corba1">Mercimek Çorbası - <span class="price">50</span> TL</label>
-            <p>Yumuşak mercimek ve baharatların mükemmel uyumu, sofralarınızda sıcak bir başlangıç.</p>
-            <div class="quantity-controls">
-                <button type="button" class="decrease">-</button>
-                <span class="quantity">0</span>
-                <button type="button" class="increase">+</button>
-            </div>
-        </div>
-		  <script>
-        window.onload = function() {
-            var newPrice = localStorage.getItem('mercimek-price'); // LocalStorage'dan fiyatı al
-            if (newPrice) {
-                var menuItem = document.querySelector('.menu-item[data-name="mercimek"]');
-                if (menuItem) {
-                    menuItem.setAttribute('data-price', newPrice); // data-price özelliğini güncelle
-                    menuItem.querySelector('.price').textContent = newPrice; // Fiyatı görsel olarak güncelle
-                    console.log("Fiyat başarıyla güncellendi:", newPrice);
-                } else {
-                    console.error("Menü öğesi bulunamadı.");
-                }
-            } else {
-                console.log("LocalStorage'da fiyat bulunamadı.");
-            }
-        };
-    </script>
-      
+    <img src="MercimekÇorbası.jpg" alt="mercimek">
+    <label for="corba1">Mercimek Çorbası - <span class="price">50</span> TL</label>
+    <p>Yumuşak mercimek ve baharatların mükemmel uyumu, sofralarınızda sıcak bir başlangıç.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
 <div class="menu-item" data-name="ezogelin" data-price="40">
     <img src="ezo.jfif" alt="ezogelin">
     <label for="corba2">Ezogelin Çorbası - <span class="price">40</span> TL</label>
@@ -183,14 +166,31 @@
         <button type="button" class="increase">+</button>
     </div>
 </div>
+
 <script>
     window.onload = function() {
-        var ezogelinPrice = localStorage.getItem('ezogelin-price'); // LocalStorage'dan fiyatı al
+        // Mercimek Çorbası fiyatını güncelle
+        var mercimekPrice = localStorage.getItem('mercimek-price'); 
+        if (mercimekPrice) {
+            var mercimekItem = document.querySelector('.menu-item[data-name="mercimek"]');
+            if (mercimekItem) {
+                mercimekItem.setAttribute('data-price', mercimekPrice);
+                mercimekItem.querySelector('.price').textContent = mercimekPrice;
+                console.log("Mercimek Çorbası fiyatı başarıyla güncellendi:", mercimekPrice);
+            } else {
+                console.error("Mercimek Çorbası menü öğesi bulunamadı.");
+            }
+        } else {
+            console.log("LocalStorage'da Mercimek Çorbası fiyatı bulunamadı.");
+        }
+
+        // Ezogelin Çorbası fiyatını güncelle
+        var ezogelinPrice = localStorage.getItem('ezogelin-price');
         if (ezogelinPrice) {
             var ezogelinItem = document.querySelector('.menu-item[data-name="ezogelin"]');
             if (ezogelinItem) {
-                ezogelinItem.setAttribute('data-price', ezogelinPrice); // data-price özelliğini güncelle
-                ezogelinItem.querySelector('.price').textContent = ezogelinPrice; // Fiyatı görsel olarak güncelle
+                ezogelinItem.setAttribute('data-price', ezogelinPrice);
+                ezogelinItem.querySelector('.price').textContent = ezogelinPrice;
                 console.log("Ezogelin Çorbası fiyatı başarıyla güncellendi:", ezogelinPrice);
             } else {
                 console.error("Ezogelin Çorbası menü öğesi bulunamadı.");
@@ -200,6 +200,7 @@
         }
     };
 </script>
+
         <div class="menu-item" data-name="Kelle paça" data-price="40">
             <img src="paça.jfif" alt="Kelle paça">
             <label for="corba3">Kelle Paça Çorbası - 40 TL</label>
