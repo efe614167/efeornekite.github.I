@@ -436,6 +436,31 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
+	    <script>
+    window.onload = function() {
+        // Yemek fiyatlarını güncelleme fonksiyonu
+        function updateMenuItemPrice(itemName) {
+            var price = localStorage.getItem(`${itemName}-price`); // Fiyatı localStorage'dan al
+            if (price) {
+                var menuItem = document.querySelector(`.menu-item[data-name="${itemName.toLowerCase()}"]`); // Menü öğesini seç
+                if (menuItem) {
+                    menuItem.setAttribute('data-price', price); // Menü öğesinin price atributunu güncelle
+                    menuItem.querySelector('.price').textContent = price; // Fiyatı DOM'a yerleştir
+                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
+                } else {
+                    console.error(`${itemName} menü öğesi bulunamadı.`);
+                }
+            } else {
+                console.log(`LocalStorage'da ${itemName} fiyatı bulunamadı.`);
+            }
+        }
+
+        // Fiyat güncellemesi yapılacak yemekler (Düzgün isimlerle)
+        const menuItems = ['köfte', 'pizza', 'körü tavuk'];  // Yemeklerin isimleri
+        menuItems.forEach(updateMenuItemPrice);
+    };
+</script>
+
         
         <!-- Yeni Yemekler -->
         <div class="menu-item" data-name="Mantarlı Et Yemeği" data-price="160">
