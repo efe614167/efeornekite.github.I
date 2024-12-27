@@ -212,39 +212,6 @@
 </div>
 
 
-    <script>
-        window.onload = function() {
-            // Çorba fiyatlarını localStorage'dan al ve menüye yerleştir
-            var soups = ['mercimek', 'ezogelin', 'kellepaca', 'domates', 'tarator', 'yayla'];
-
-            soups.forEach(function(soup) {
-                var price = localStorage.getItem(soup + '-price');
-                if (price) {
-                    document.querySelector(`.menu-item[data-name="${soup}"] .price`).textContent = price + " TL";
-                }
-            });
-
-            // Miktar kontrol butonları
-            var quantityControls = document.querySelectorAll('.quantity-controls');
-            quantityControls.forEach(function(control) {
-                var decreaseButton = control.querySelector('.decrease');
-                var increaseButton = control.querySelector('.increase');
-                var quantitySpan = control.querySelector('.quantity');
-                
-                decreaseButton.addEventListener('click', function() {
-                    var currentQuantity = parseInt(quantitySpan.textContent);
-                    if (currentQuantity > 0) {
-                        quantitySpan.textContent = currentQuantity - 1;
-                    }
-                });
-                
-                increaseButton.addEventListener('click', function() {
-                    var currentQuantity = parseInt(quantitySpan.textContent);
-                    quantitySpan.textContent = currentQuantity + 1;
-                });
-            });
-        };
-    </script>
         <div class="menu-item" data-name="tavuk" data-price="50">
             <img src="tavuk.jfif" alt="tavuk">
             <label for="corba7">Tavuk Çorbası - 50 TL</label>
@@ -399,6 +366,64 @@
         </div>
     </div>
 </div>
+
+<script>
+    window.onload = function() {
+        // Çorba fiyatlarını localStorage'dan al ve menüye yerleştir
+        var soups = ['mercimek', 'ezogelin', 'kellepaca', 'domates', 'tarator', 'yayla', 'tavuk', 'balık', 'karnıbahar', 'şehriye', 'acılı', 'sütlü', 'zeytinyağlı', 'kısır', 'etli', 'vegan', 'soğan', 'kabak', 'börülce', 'şehriye-tarator', 'etli-mercimek'];
+
+        // Çorba fiyatlarını localStorage'dan güncelle
+        soups.forEach(function(soup) {
+            var price = localStorage.getItem(soup + '-price');
+            if (price) {
+                document.querySelector(`.menu-item[data-name="${soup}"] .price`).textContent = price + " TL";
+            }
+        });
+
+        // Miktar kontrol butonları
+        var quantityControls = document.querySelectorAll('.quantity-controls');
+        quantityControls.forEach(function(control) {
+            var decreaseButton = control.querySelector('.decrease');
+            var increaseButton = control.querySelector('.increase');
+            var quantitySpan = control.querySelector('.quantity');
+
+            // Miktarı artır
+            increaseButton.addEventListener('click', function() {
+                var currentQuantity = parseInt(quantitySpan.textContent);
+                quantitySpan.textContent = currentQuantity + 1;
+
+                // Fiyatı güncelle
+                updateTotalPrice();
+            });
+
+            // Miktarı azalt
+            decreaseButton.addEventListener('click', function() {
+                var currentQuantity = parseInt(quantitySpan.textContent);
+                if (currentQuantity > 0) {
+                    quantitySpan.textContent = currentQuantity - 1;
+                }
+
+                // Fiyatı güncelle
+                updateTotalPrice();
+            });
+        });
+
+        // Sepetteki toplam fiyatı güncelle
+        function updateTotalPrice() {
+            var totalPrice = 0;
+            var menuItems = document.querySelectorAll('.menu-item');
+
+            menuItems.forEach(function(item) {
+                var quantity = parseInt(item.querySelector('.quantity').textContent);
+                var price = parseFloat(item.dataset.price);
+                totalPrice += quantity * price;
+            });
+
+            // Sepet toplamını buraya ekleyebilirsiniz, örneğin:
+            console.log("Toplam Fiyat: " + totalPrice + " TL");
+        }
+    };
+</script>
 
 
             <!-- Yemekler -->
