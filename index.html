@@ -210,16 +210,17 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-	    <script>
+	 <script>
     window.onload = function() {
         // Çorba fiyatlarını güncelleme fonksiyonu
         function updateSoupPrice(soupName) {
             var price = localStorage.getItem(`${soupName}-price`);
             if (price) {
-                var menuItem = document.querySelector(`.menu-item[data-name="${soupName.toLowerCase()}"]`);  // Küçük harf ile eşleşme sağlanıyor
+                // Menüdeki öğeyi seç
+                var menuItem = document.querySelector(`.menu-item[data-name="${soupName.toLowerCase()}"]`);
                 if (menuItem) {
-                    menuItem.setAttribute('data-price', price);
-                    menuItem.querySelector('.price').textContent = price;
+                    menuItem.setAttribute('data-price', price);  // Veriyi güncelle
+                    menuItem.querySelector('.price').textContent = price;  // Fiyatı görüntüle
                     console.log(`${soupName} fiyatı başarıyla güncellendi: ${price}`);
                 } else {
                     console.error(`${soupName} menü öğesi bulunamadı.`);
@@ -229,11 +230,12 @@
             }
         }
 
-        // Fiyat güncellemesi yapılacak çorbalar (Düzgün isimlerle)
-        const soups = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla'];  // Yayla Çorbası eklendi
+        // Fiyat güncellemesi yapılacak çorbalar
+        const soups = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla', 'kofte', 'pizza', 'kori tavuk'];  // Yeni çorbalar eklendi
         soups.forEach(updateSoupPrice);
     };
 </script>
+
 
 
         <div class="menu-item" data-name="tavuk" data-price="50">
