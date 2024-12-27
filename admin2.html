@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çorba Fiyat Düzenleme</title>
+    <title>Çorba ve Yemek Fiyat Düzenleme</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,10 +73,11 @@
     </style>
 </head>
 <body>
-    <h1>Çorba Fiyatlarını Düzenleyin</h1>
+    <h1>Çorba ve Yemek Fiyatlarını Düzenleyin</h1>
 
-    <!-- Fiyat Giriş Alanları -->
+    <!-- Çorbalar ve Yemekler -->
     <div class="price-container">
+        <!-- Çorba Fiyatları -->
         <div class="price-panel">
             <h2>Mercimek Çorbası</h2>
             <label for="mercimek-price">Yeni Fiyat (TL): </label>
@@ -95,7 +96,7 @@
             <input type="number" id="domates-price" placeholder="Fiyatı girin" />
         </div>
 
-        <!-- Yeni çorbalar -->
+        <!-- Yemek Fiyatları -->
         <div class="price-panel">
             <h2>Köfte</h2>
             <label for="kofte-price">Yeni Fiyat (TL): </label>
@@ -123,23 +124,23 @@
 
     <script>
         window.onload = function() {
-            // Çorba fiyatlarını güncelleme fonksiyonu
-            function updateSoupPrice(soupName) {
-                var price = localStorage.getItem(`${soupName}-price`);
+            // Fiyat güncelleme fonksiyonu
+            function updatePrice(itemName) {
+                var price = localStorage.getItem(`${itemName}-price`);  // LocalStorage'dan fiyatı al
                 if (price) {
-                    var priceInput = document.getElementById(`${soupName}-price`);
+                    var priceInput = document.getElementById(`${itemName}-price`);
                     if (priceInput) {
-                        priceInput.value = price;
+                        priceInput.value = price;  // Fiyatı input'a yerleştir
                     }
-                    console.log(`${soupName} fiyatı başarıyla güncellendi: ${price}`);
+                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
                 } else {
-                    console.log(`LocalStorage'da ${soupName} fiyatı bulunamadı.`);
+                    console.log(`${itemName} için fiyat bulunamadı.`);
                 }
             }
 
-            // Fiyat güncellemesi yapılacak çorbalar
-            const soups = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'kori-tavuk'];
-            soups.forEach(updateSoupPrice);
+            // Fiyat güncellemesi yapılacak yemekler ve çorbalar
+            const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'kori-tavuk'];
+            items.forEach(updatePrice);
         };
 
         // Fiyatları kaydetme fonksiyonu
