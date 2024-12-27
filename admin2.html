@@ -145,5 +145,79 @@
             alert('Fiyatlar başarıyla kaydedildi!');
         });
     </script>
+      <h1>Yemek Fiyatlarını Düzenleyin</h1>
+
+    <!-- Fiyat Giriş Alanları -->
+    <div class="price-container">
+        <!-- Köfte Fiyat Paneli -->
+        <div class="price-panel">
+            <h2>Köfte</h2>
+            <label for="koefte-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="koefte-price" placeholder="Fiyatı girin" />
+        </div>
+
+        <!-- Pizza Fiyat Paneli -->
+        <div class="price-panel">
+            <h2>Pizza</h2>
+            <label for="pizza-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="pizza-price" placeholder="Fiyatı girin" />
+        </div>
+
+        <!-- Köri Tavuk Fiyat Paneli -->
+        <div class="price-panel">
+            <h2>Köri Tavuk</h2>
+            <label for="kori-tavuk-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="kori-tavuk-price" placeholder="Fiyatı girin" />
+        </div>
+    </div>
+
+    <!-- Kaydet ve Ana Sayfa Butonları -->
+    <div class="button-container">
+        <button id="save-prices">Fiyatları Kaydet</button>
+        <button onclick="window.location.href='index.html';">Ana Sayfaya Dön</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Sayfa yüklendiğinde yerel depolama üzerinden fiyatları kontrol et ve güncelle
+            const koeftePrice = localStorage.getItem('koefte-price');
+            const pizzaPrice = localStorage.getItem('pizza-price');
+            const koriTavukPrice = localStorage.getItem('kori-tavuk-price');
+
+            if (koeftePrice) {
+                document.getElementById('koefte-price').value = koeftePrice;
+            }
+
+            if (pizzaPrice) {
+                document.getElementById('pizza-price').value = pizzaPrice;
+            }
+
+            if (koriTavukPrice) {
+                document.getElementById('kori-tavuk-price').value = koriTavukPrice;
+            }
+        };
+
+        // Fiyatları kaydetme işlemi
+        document.getElementById('save-prices').addEventListener('click', function() {
+            const newKoeftePrice = document.getElementById('koefte-price').value.trim();
+            const newPizzaPrice = document.getElementById('pizza-price').value.trim();
+            const newKoriTavukPrice = document.getElementById('kori-tavuk-price').value.trim();
+
+            // Fiyatları localStorage'a kaydet
+            if (newKoeftePrice && !isNaN(newKoeftePrice)) {
+                localStorage.setItem('koefte-price', newKoeftePrice);
+            }
+
+            if (newPizzaPrice && !isNaN(newPizzaPrice)) {
+                localStorage.setItem('pizza-price', newPizzaPrice);
+            }
+
+            if (newKoriTavukPrice && !isNaN(newKoriTavukPrice)) {
+                localStorage.setItem('kori-tavuk-price', newKoriTavukPrice);
+            }
+
+            alert('Fiyatlar başarıyla kaydedildi!');
+        });
+    </script>
 </body>
 </html>
