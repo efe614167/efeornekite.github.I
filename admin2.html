@@ -123,57 +123,56 @@
     </div>
 
     <script>
-        window.onload = function() {
-            // Fiyat güncelleme fonksiyonu
-            function updatePrice(itemName) {
-                var price = localStorage.getItem(`${itemName}-price`);  // LocalStorage'dan fiyatı al
-                if (price) {
-                    var priceInput = document.getElementById(`${itemName}-price`);
-                    if (priceInput) {
-                        priceInput.value = price;  // Fiyatı input'a yerleştir
-                    }
-                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
-                } else {
-                    console.log(`${itemName} için fiyat bulunamadı.`);
-                }
+      window.onload = function() {
+    // Fiyat güncelleme fonksiyonu
+    function updatePrice(itemName) {
+        var price = localStorage.getItem(`${itemName}-price`);  // LocalStorage'dan fiyatı al
+        if (price) {
+            var priceInput = document.getElementById(`${itemName}-price`);
+            if (priceInput) {
+                priceInput.value = price;  // Fiyatı input'a yerleştir
             }
+            console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
+        } else {
+            console.log(`${itemName} için fiyat bulunamadı.`);
+        }
+    }
 
-            // Fiyat güncellemesi yapılacak yemekler ve çorbalar
-            const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'köri-tavuk'];
-            items.forEach(updatePrice);
-        };
+    // Fiyat güncellemesi yapılacak yemekler ve çorbalar
+    const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'köri-tavuk'];
+    items.forEach(updatePrice);
+};
 
-        // Fiyatları kaydetme fonksiyonu
-        document.getElementById('save-prices').addEventListener('click', function() {
-            var mercimekPrice = document.getElementById('mercimek-price').value.trim();
-            var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
-            var domatesPrice = document.getElementById('domates-price').value.trim();
-            var koftePrice = document.getElementById('kofte-price').value.trim();
-            var pizzaPrice = document.getElementById('pizza-price').value.trim();
-            var köriTavukPrice = document.getElementById('köri-tavuk-price').value.trim();
+document.getElementById('save-prices').addEventListener('click', function() {
+    var mercimekPrice = document.getElementById('mercimek-price').value.trim();
+    var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
+    var domatesPrice = document.getElementById('domates-price').value.trim();
+    var koftePrice = document.getElementById('kofte-price').value.trim();
+    var pizzaPrice = document.getElementById('pizza-price').value.trim();
+    var koriTavukPrice = document.getElementById('köri-tavuk-price').value.trim();
 
-            // Fiyatları localStorage'a kaydet
-            if (mercimekPrice && !isNaN(mercimekPrice)) {
-                localStorage.setItem('mercimek-price', mercimekPrice);
-            }
-            if (ezogelinPrice && !isNaN(ezogelinPrice)) {
-                localStorage.setItem('ezogelin-price', ezogelinPrice);
-            }
-            if (domatesPrice && !isNaN(domatesPrice)) {
-                localStorage.setItem('domates-price', domatesPrice);
-            }
-            if (koftePrice && !isNaN(koftePrice)) {
-                localStorage.setItem('kofte-price', koftePrice);
-            }
-            if (pizzaPrice && !isNaN(pizzaPrice)) {
-                localStorage.setItem('pizza-price', pizzaPrice);
-            }
-            if (köriTavukPrice && !isNaN(köriTavukPrice)) {
-                localStorage.setItem('köri-tavuk-price', köriTavukPrice);
-            }
+    // Fiyatları localStorage'a kaydet
+    if (mercimekPrice && !isNaN(mercimekPrice)) {
+        localStorage.setItem('mercimek-price', mercimekPrice);
+    }
+    if (ezogelinPrice && !isNaN(ezogelinPrice)) {
+        localStorage.setItem('ezogelin-price', ezogelinPrice);
+    }
+    if (domatesPrice && !isNaN(domatesPrice)) {
+        localStorage.setItem('domates-price', domatesPrice);
+    }
+    if (koftePrice && !isNaN(koftePrice)) {
+        localStorage.setItem('kofte-price', koftePrice);
+    }
+    if (pizzaPrice && !isNaN(pizzaPrice)) {
+        localStorage.setItem('pizza-price', pizzaPrice);
+    }
+    if (koriTavukPrice && !isNaN(koriTavukPrice)) {
+        localStorage.setItem('köri-tavuk-price', koriTavukPrice);  // ID'yi doğru şekilde kullanıyoruz
+    }
 
-            alert('Fiyatlar başarıyla kaydedildi!');
-        });
+    alert('Fiyatlar başarıyla kaydedildi!');
+});
     </script>
 </body>
 </html>
