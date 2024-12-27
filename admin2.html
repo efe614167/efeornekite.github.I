@@ -111,8 +111,8 @@
 
         <div class="price-panel">
             <h2>Köri Tavuk</h2>
-            <label for="kori-tavuk-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="kori-tavuk-price" placeholder="Fiyatı girin" />
+            <label for="köri-tavuk-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="köri-tavuk-price" placeholder="Fiyatı girin" />
         </div>
     </div>
 
@@ -139,7 +139,7 @@
             }
 
             // Fiyat güncellemesi yapılacak yemekler ve çorbalar
-            const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'kori-tavuk'];
+            const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'köri-tavuk'];
             items.forEach(updatePrice);
         };
 
@@ -150,7 +150,7 @@
             var domatesPrice = document.getElementById('domates-price').value.trim();
             var koftePrice = document.getElementById('kofte-price').value.trim();
             var pizzaPrice = document.getElementById('pizza-price').value.trim();
-            var koriTavukPrice = document.getElementById('kori-tavuk-price').value.trim();
+            var köriTavukPrice = document.getElementById('köri-tavuk-price').value.trim();
 
             // Fiyatları localStorage'a kaydet
             if (mercimekPrice && !isNaN(mercimekPrice)) {
@@ -168,8 +168,8 @@
             if (pizzaPrice && !isNaN(pizzaPrice)) {
                 localStorage.setItem('pizza-price', pizzaPrice);
             }
-            if (koriTavukPrice && !isNaN(koriTavukPrice)) {
-                localStorage.setItem('kori-tavuk-price', koriTavukPrice);
+            if (köriTavukPrice && !isNaN(köriTavukPrice)) {
+                localStorage.setItem('köri-tavuk-price', köriTavukPrice);
             }
 
             alert('Fiyatlar başarıyla kaydedildi!');
