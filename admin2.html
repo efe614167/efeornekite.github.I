@@ -142,68 +142,68 @@
     </div>
 
     <script>
-      window.onload = function() {
-        // Fiyat güncelleme fonksiyonu
-        function updatePrice(itemName) {
-            var price = localStorage.getItem(`${itemName}-price`);  // LocalStorage'dan fiyatı al
-            if (price) {
-                var priceInput = document.getElementById(`${itemName}-price`);
-                if (priceInput) {
-                    priceInput.value = price;  // Fiyatı input'a yerleştir
+        window.onload = function() {
+            // Fiyat güncelleme fonksiyonu
+            function updatePrice(itemName) {
+                var price = localStorage.getItem(`${itemName}-price`);  // LocalStorage'dan fiyatı al
+                if (price) {
+                    var priceInput = document.getElementById(`${itemName}-price`);
+                    if (priceInput) {
+                        priceInput.value = price;  // Fiyatı input'a yerleştir
+                    }
+                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
+                } else {
+                    console.log(`${itemName} için fiyat bulunamadı.`);
                 }
-                console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
-            } else {
-                console.log(`${itemName} için fiyat bulunamadı.`);
             }
-        }
 
-        // Fiyat güncellemesi yapılacak yemekler, çorbalar ve salatalar
-        const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'köri-tavuk', 'coban-salata', 'mevsim-salata', 'akdeniz-salata'];
-        items.forEach(updatePrice);
-    };
+            // Fiyat güncellemesi yapılacak yemekler, çorbalar ve salatalar
+            const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'köri-tavuk', 'coban-salata', 'mevsim-salata', 'akdeniz-salata'];
+            items.forEach(updatePrice);
+        };
 
-    document.getElementById('save-prices').addEventListener('click', function() {
-        var mercimekPrice = document.getElementById('mercimek-price').value.trim();
-        var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
-        var domatesPrice = document.getElementById('domates-price').value.trim();
-        var koftePrice = document.getElementById('kofte-price').value.trim();
-        var pizzaPrice = document.getElementById('pizza-price').value.trim();
-        var koriTavukPrice = document.getElementById('köri-tavuk-price').value.trim();
-        var cobanSalataPrice = document.getElementById('coban-salata-price').value.trim();
-        var mevsimSalataPrice = document.getElementById('mevsim-salata-price').value.trim();
-        var akdenizSalataPrice = document.getElementById('akdeniz-salata-price').value.trim();
+        document.getElementById('save-prices').addEventListener('click', function() {
+            var mercimekPrice = document.getElementById('mercimek-price').value.trim();
+            var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
+            var domatesPrice = document.getElementById('domates-price').value.trim();
+            var koftePrice = document.getElementById('kofte-price').value.trim();
+            var pizzaPrice = document.getElementById('pizza-price').value.trim();
+            var koriTavukPrice = document.getElementById('köri-tavuk-price').value.trim();
+            var cobanSalataPrice = document.getElementById('coban-salata-price').value.trim();
+            var mevsimSalataPrice = document.getElementById('mevsim-salata-price').value.trim();
+            var akdenizSalataPrice = document.getElementById('akdeniz-salata-price').value.trim();
 
-        // Fiyatları localStorage'a kaydet
-        if (mercimekPrice && !isNaN(mercimekPrice)) {
-            localStorage.setItem('mercimek-price', mercimekPrice);
-        }
-        if (ezogelinPrice && !isNaN(ezogelinPrice)) {
-            localStorage.setItem('ezogelin-price', ezogelinPrice);
-        }
-        if (domatesPrice && !isNaN(domatesPrice)) {
-            localStorage.setItem('domates-price', domatesPrice);
-        }
-        if (koftePrice && !isNaN(koftePrice)) {
-            localStorage.setItem('kofte-price', koftePrice);
-        }
-        if (pizzaPrice && !isNaN(pizzaPrice)) {
-            localStorage.setItem('pizza-price', pizzaPrice);
-        }
-        if (koriTavukPrice && !isNaN(koriTavukPrice)) {
-            localStorage.setItem('köri-tavuk-price', koriTavukPrice);
-        }
-        if (cobanSalataPrice && !isNaN(cobanSalataPrice)) {
-            localStorage.setItem('coban-salata-price', cobanSalataPrice);
-        }
-        if (mevsimSalataPrice && !isNaN(mevsimSalataPrice)) {
-            localStorage.setItem('mevsim-salata-price', mevsimSalataPrice);
-        }
-        if (akdenizSalataPrice && !isNaN(akdenizSalataPrice)) {
-            localStorage.setItem('akdeniz-salata-price', akdenizSalataPrice);
-        }
+            // Fiyatları localStorage'a kaydet
+            if (mercimekPrice && !isNaN(mercimekPrice)) {
+                localStorage.setItem('mercimek-price', mercimekPrice);
+            }
+            if (ezogelinPrice && !isNaN(ezogelinPrice)) {
+                localStorage.setItem('ezogelin-price', ezogelinPrice);
+            }
+            if (domatesPrice && !isNaN(domatesPrice)) {
+                localStorage.setItem('domates-price', domatesPrice);
+            }
+            if (koftePrice && !isNaN(koftePrice)) {
+                localStorage.setItem('kofte-price', koftePrice);
+            }
+            if (pizzaPrice && !isNaN(pizzaPrice)) {
+                localStorage.setItem('pizza-price', pizzaPrice);
+            }
+            if (koriTavukPrice && !isNaN(koriTavukPrice)) {
+                localStorage.setItem('köri-tavuk-price', koriTavukPrice);
+            }
+            if (cobanSalataPrice && !isNaN(cobanSalataPrice)) {
+                localStorage.setItem('coban-salata-price', cobanSalataPrice);
+            }
+            if (mevsimSalataPrice && !isNaN(mevsimSalataPrice)) {
+                localStorage.setItem('mevsim-salata-price', mevsimSalataPrice);
+            }
+            if (akdenizSalataPrice && !isNaN(akdenizSalataPrice)) {
+                localStorage.setItem('akdeniz-salata-price', akdenizSalataPrice);
+            }
 
-        alert('Fiyatlar başarıyla kaydedildi!');
-    });
+            alert('Fiyatlar başarıyla kaydedildi!');
+        });
     </script>
 </body>
 </html>
