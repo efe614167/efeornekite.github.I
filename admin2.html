@@ -108,31 +108,6 @@
             <label for="pizza-price">Yeni Fiyat (TL): </label>
             <input type="number" id="pizza-price" placeholder="Fiyatı girin" />
         </div>
-
-        <div class="price-panel">
-            <h2>Köri Tavuk</h2>
-            <label for="köri-tavuk-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="köri-tavuk-price" placeholder="Fiyatı girin" />
-        </div>
-
-        <!-- Salata Fiyatları -->
-        <div class="price-panel">
-            <h2>Çoban Salata</h2>
-            <label for="coban-salata-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="coban-salata-price" placeholder="Fiyatı girin" />
-        </div>
-
-        <div class="price-panel">
-            <h2>Mevsim Salata</h2>
-            <label for="mevsim-salata-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="mevsim-salata-price" placeholder="Fiyatı girin" />
-        </div>
-
-        <div class="price-panel">
-            <h2>Akdeniz Salata</h2>
-            <label for="akdeniz-salata-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="akdeniz-salata-price" placeholder="Fiyatı girin" />
-        </div>
     </div>
 
     <!-- Kaydet ve Ana Sayfa Butonları -->
@@ -157,8 +132,8 @@
                 }
             }
 
-            // Fiyat güncellemesi yapılacak yemekler, çorbalar ve salatalar
-            const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'köri-tavuk', 'coban-salata', 'mevsim-salata', 'akdeniz-salata'];
+            // Fiyat güncellemesi yapılacak yemekler ve çorbalar
+            const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza'];
             items.forEach(updatePrice);
         };
 
@@ -168,10 +143,6 @@
             var domatesPrice = document.getElementById('domates-price').value.trim();
             var koftePrice = document.getElementById('kofte-price').value.trim();
             var pizzaPrice = document.getElementById('pizza-price').value.trim();
-            var koriTavukPrice = document.getElementById('köri-tavuk-price').value.trim();
-            var cobanSalataPrice = document.getElementById('coban-salata-price').value.trim();
-            var mevsimSalataPrice = document.getElementById('mevsim-salata-price').value.trim();
-            var akdenizSalataPrice = document.getElementById('akdeniz-salata-price').value.trim();
 
             // Fiyatları localStorage'a kaydet
             if (mercimekPrice && !isNaN(mercimekPrice)) {
@@ -188,18 +159,6 @@
             }
             if (pizzaPrice && !isNaN(pizzaPrice)) {
                 localStorage.setItem('pizza-price', pizzaPrice);
-            }
-            if (koriTavukPrice && !isNaN(koriTavukPrice)) {
-                localStorage.setItem('köri-tavuk-price', koriTavukPrice);
-            }
-            if (cobanSalataPrice && !isNaN(cobanSalataPrice)) {
-                localStorage.setItem('coban-salata-price', cobanSalataPrice);
-            }
-            if (mevsimSalataPrice && !isNaN(mevsimSalataPrice)) {
-                localStorage.setItem('mevsim-salata-price', mevsimSalataPrice);
-            }
-            if (akdenizSalataPrice && !isNaN(akdenizSalataPrice)) {
-                localStorage.setItem('akdeniz-salata-price', akdenizSalataPrice);
             }
 
             alert('Fiyatlar başarıyla kaydedildi!');
