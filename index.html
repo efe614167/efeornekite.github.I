@@ -366,76 +366,51 @@
         </div>
     </div>
 </div>
-
 <script>
     window.onload = function() {
-        // Çorba isimlerini tanımlayalım
-        var soups = ['mercimek', 'ezogelin', 'kellepaca', 'domates', 'tarator', 'yayla', 'tavuk', 'balık', 'karnıbahar', 'şehriye', 'acılı', 'sütlü', 'zeytinyağlı', 'kısır', 'etli', 'vegan', 'soğan', 'kabak', 'börülce', 'şehriye-tarator', 'etli-mercimek'];
-
-        // Çorba fiyatlarını localStorage'dan al ve menüye yerleştir
-        soups.forEach(function(soup) {
-            var price = localStorage.getItem(soup + '-price');
-            if (price) {
-                var menuItem = document.querySelector(`.menu-item[data-name="${soup}"]`);
-                if (menuItem) {
-                    menuItem.querySelector('.price').textContent = price + " TL";
-                    menuItem.dataset.price = price;  // Fiyatı data-price'a güncelle
-                }
-            }
-        });
-
-        // Miktar kontrol butonları
+        // Miktar kontrol butonlarına etkileşim ekleyelim
         var quantityControls = document.querySelectorAll('.quantity-controls');
+        
         quantityControls.forEach(function(control) {
             var decreaseButton = control.querySelector('.decrease');
             var increaseButton = control.querySelector('.increase');
             var quantitySpan = control.querySelector('.quantity');
 
-            // Miktarı artır
+            // Artı (+) butonuna tıklanıldığında miktarı artır
             increaseButton.addEventListener('click', function() {
                 var currentQuantity = parseInt(quantitySpan.textContent);
                 quantitySpan.textContent = currentQuantity + 1;
-
-                // Fiyatı güncelle
                 updateTotalPrice();
             });
 
-            // Miktarı azalt
+            // Eksi (-) butonuna tıklanıldığında miktarı azalt
             decreaseButton.addEventListener('click', function() {
                 var currentQuantity = parseInt(quantitySpan.textContent);
                 if (currentQuantity > 0) {
                     quantitySpan.textContent = currentQuantity - 1;
                 }
-
-                // Fiyatı güncelle
                 updateTotalPrice();
             });
         });
 
-        // Sepetteki toplam fiyatı güncelle
+        // Sepetteki toplam fiyatı güncelleyen fonksiyon
         function updateTotalPrice() {
             var totalPrice = 0;
             var menuItems = document.querySelectorAll('.menu-item');
-
+            
+            // Her bir menü öğesindeki fiyat ve miktarı alıp toplamda topluyoruz
             menuItems.forEach(function(item) {
                 var quantity = parseInt(item.querySelector('.quantity').textContent);
                 var price = parseFloat(item.dataset.price);
                 totalPrice += quantity * price;
             });
 
-            // Sepet toplamını burada güncelleyebilirsiniz
-            console.log("Toplam Fiyat: " + totalPrice + " TL");
-
-            // Örneğin, toplam fiyatı ekranda göstermek için:
+            // Toplam fiyatı sayfada gösterelim
             var totalPriceElement = document.getElementById('total-price');
-            if (totalPriceElement) {
-                totalPriceElement.textContent = "Toplam: " + totalPrice.toFixed(2) + " TL";
-            }
+            totalPriceElement.textContent = "Toplam: " + totalPrice.toFixed(2) + " TL";
         }
     };
 </script>
-
-
 
             <!-- Yemekler -->
   <div class="menu-section">
