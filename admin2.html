@@ -90,9 +90,27 @@
         </div>
 
         <div class="price-panel">
+            <h2>Kelle Paça Çorbası</h2>
+            <label for="kellepaca-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="kellepaca-price" placeholder="Fiyatı girin" />
+        </div>
+
+        <div class="price-panel">
             <h2>Domates Çorbası</h2>
             <label for="domates-price">Yeni Fiyat (TL): </label>
             <input type="number" id="domates-price" placeholder="Fiyatı girin" />
+        </div>
+
+        <div class="price-panel">
+            <h2>Tarator Çorbası</h2>
+            <label for="tarator-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="tarator-price" placeholder="Fiyatı girin" />
+        </div>
+
+        <div class="price-panel">
+            <h2>Yayla Çorbası</h2>
+            <label for="yayla-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="yayla-price" placeholder="Fiyatı girin" />
         </div>
     </div>
 
@@ -106,22 +124,22 @@
         window.onload = function() {
             // Çorba fiyatlarını güncelleme fonksiyonu
             function updateSoupPrice(soupName) {
-                var price = localStorage.getItem(`${soupName}-price`);
+                var price = localStorage.getItem(${soupName}-price);
                 if (price) {
-                    var menuItem = document.querySelector(`.menu-item[data-name="${soupName.toLowerCase()}"]`);
+                    var menuItem = document.querySelector(.menu-item[data-name="${soupName.toLowerCase()}"]);
                     if (menuItem) {
                         // Fiyatı güncelle
                         menuItem.setAttribute('data-price', price);
                         menuItem.querySelector('.price').textContent = price;
-                        console.log(`${soupName} fiyatı başarıyla güncellendi: ${price}`);
+                        console.log(${soupName} fiyatı başarıyla güncellendi: ${price});
                     }
                 } else {
-                    console.log(`LocalStorage'da ${soupName} fiyatı bulunamadı.`);
+                    console.log(LocalStorage'da ${soupName} fiyatı bulunamadı.);
                 }
             }
 
             // Fiyat güncellemesi yapılacak çorbalar
-            const soups = ['mercimek', 'ezogelin', 'domates'];
+            const soups = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla'];
             soups.forEach(updateSoupPrice);
         };
 
@@ -129,7 +147,10 @@
         document.getElementById('save-prices').addEventListener('click', function() {
             var mercimekPrice = document.getElementById('mercimek-price').value.trim();
             var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
+            var kellepacaPrice = document.getElementById('kellepaca-price').value.trim();
             var domatesPrice = document.getElementById('domates-price').value.trim();
+            var taratorPrice = document.getElementById('tarator-price').value.trim();
+            var yaylaPrice = document.getElementById('yayla-price').value.trim();
 
             // Fiyatları localStorage'a kaydet
             if (mercimekPrice && !isNaN(mercimekPrice)) {
@@ -138,8 +159,17 @@
             if (ezogelinPrice && !isNaN(ezogelinPrice)) {
                 localStorage.setItem('ezogelin-price', ezogelinPrice);
             }
+            if (kellepacaPrice && !isNaN(kellepacaPrice)) {
+                localStorage.setItem('kellepaca-price', kellepacaPrice);
+            }
             if (domatesPrice && !isNaN(domatesPrice)) {
                 localStorage.setItem('domates-price', domatesPrice);
+            }
+            if (taratorPrice && !isNaN(taratorPrice)) {
+                localStorage.setItem('tarator-price', taratorPrice);
+            }
+            if (yaylaPrice && !isNaN(yaylaPrice)) {
+                localStorage.setItem('yayla-price', yaylaPrice);
             }
 
             alert('Fiyatlar başarıyla kaydedildi!');
