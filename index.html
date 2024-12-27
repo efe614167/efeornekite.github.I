@@ -145,8 +145,8 @@
 <div class="menu-section">
     <h3>Çorbalar</h3>
     <div class="menu-items">
-   <div class="menu-item" data-name="mercimek" data-price="50">
-    <img src="MercimekÇorbası.jpg" alt="Mercimek Çorbası">
+    <div class="menu-item" data-name="mercimek" data-price="50">
+    <img src="MercimekÇorbası.jpg" alt="mercimek">
     <label for="corba1">Mercimek Çorbası - <span class="price">50</span> TL</label>
     <p>Yumuşak mercimek ve baharatların mükemmel uyumu, sofralarınızda sıcak bir başlangıç.</p>
     <div class="quantity-controls">
@@ -157,7 +157,7 @@
 </div>
 
 <div class="menu-item" data-name="ezogelin" data-price="40">
-    <img src="ezo.jfif" alt="Ezogelin Çorbası">
+    <img src="ezo.jfif" alt="ezogelin">
     <label for="corba2">Ezogelin Çorbası - <span class="price">40</span> TL</label>
     <p>Bol baharatlı ve zeytinyağlı, geleneksel bir lezzet. Sofranızı şenlendirecek.</p>
     <div class="quantity-controls">
@@ -167,8 +167,8 @@
     </div>
 </div>
 
-<div class="menu-item" data-name="kellepaca" data-price="40">
-    <img src="paça.jfif" alt="Kelle Paça Çorbası">
+<div class="menu-item" data-name="Kelle paça" data-price="40">
+    <img src="paça.jfif" alt="Kelle paça">
     <label for="corba3">Kelle Paça Çorbası - <span class="price">40</span> TL</label>
     <p>Çeşitli etlerin en güzel haliyle hazırlanan, özel baharatlarla zenginleştirilen nefis bir çorba.</p>
     <div class="quantity-controls">
@@ -179,7 +179,7 @@
 </div>
 
 <div class="menu-item" data-name="domates" data-price="45">
-    <img src="domates.jpeg" alt="Domates Çorbası">
+    <img src="domates.jpeg" alt="domates">
     <label for="corba4">Domates Çorbası - <span class="price">45</span> TL</label>
     <p>Özel baharatlarla lezzetlendirilmiş domatesin enfes tatlı ekşi dengesiyle hazırlanmış klasik bir çorba.</p>
     <div class="quantity-controls">
@@ -187,31 +187,53 @@
         <span class="quantity">0</span>
         <button type="button" class="increase">+</button>
     </div>
-</div>
+</div><script>
+    window.onload = function() {
+        // Çorba fiyatlarını güncelleme fonksiyonu
+        function updateSoupPrice(soupName) {
+            var price = localStorage.getItem(`${soupName}-price`);
+            if (price) {
+                var menuItem = document.querySelector(`.menu-item[data-name="${soupName.toLowerCase()}"]`);  // Küçük harf ile eşleşme sağlanıyor
+                if (menuItem) {
+                    menuItem.setAttribute('data-price', price);
+                    menuItem.querySelector('.price').textContent = price;
+                    console.log(`${soupName} fiyatı başarıyla güncellendi: ${price}`);
+                } else {
+                    console.error(`${soupName} menü öğesi bulunamadı.`);
+                }
+            } else {
+                console.log(`LocalStorage'da ${soupName} fiyatı bulunamadı.`);
+            }
+        }
 
-<div class="menu-item" data-name="tarator" data-price="35">
-    <img src="tarator.jfif" alt="Tarator Çorbası">
-    <label for="corba5">Tarator Çorbası - <span class="price">35</span> TL</label>
-    <p>Yoğurt ve zeytinyağının mükemmel birleşimi, içinde ince ince doğranmış salatalık ve sarımsak var.</p>
-    <div class="quantity-controls">
-        <button type="button" class="decrease">-</button>
-        <span class="quantity">0</span>
-        <button type="button" class="increase">+</button>
-    </div>
-</div>
-
-<div class="menu-item" data-name="yayla" data-price="45">
-    <img src="yayla.webp" alt="Yayla Çorbası">
-    <label for="corba6">Yayla Çorbası - <span class="price">45</span> TL</label>
-    <p>Yoğurtlu, naneli ve pirinçli mükemmel bir lezzet. Özellikle yaz aylarında serinletici bir tat.</p>
-    <div class="quantity-controls">
-        <button type="button" class="decrease">-</button>
-        <span class="quantity">0</span>
-        <button type="button" class="increase">+</button>
-    </div>
-</div>
+        // Fiyat güncellemesi yapılacak çorbalar (Düzgün isimlerle)
+        const soups = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla'];  // Yayla Çorbası eklendi
+        soups.forEach(updateSoupPrice);
+    };
+</script>
 
 
+
+        <div class="menu-item" data-name="tarator" data-price="35">
+            <img src="tarator.jfif" alt="tarator">
+            <label for="corba5">Tarator Çorbası - 35 TL</label>
+            <p>Yoğurt ve zeytinyağının mükemmel birleşimi, içinde ince ince doğranmış salatalık ve sarımsak var.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
+        <div class="menu-item" data-name="yayla" data-price="45">
+            <img src="yayla.webp" alt="yayla">
+            <label for="corba6">Yayla Çorbası - 45 TL</label>
+            <p>Yoğurtlu, naneli ve pirinçli mükemmel bir lezzet. Özellikle yaz aylarında serinletici bir tat.</p>
+            <div class="quantity-controls">
+                <button type="button" class="decrease">-</button>
+                <span class="quantity">0</span>
+                <button type="button" class="increase">+</button>
+            </div>
+        </div>
         <div class="menu-item" data-name="tavuk" data-price="50">
             <img src="tavuk.jfif" alt="tavuk">
             <label for="corba7">Tavuk Çorbası - 50 TL</label>
@@ -366,51 +388,7 @@
         </div>
     </div>
 </div>
-<script>
-    window.onload = function() {
-        // Miktar kontrol butonlarına etkileşim ekleyelim
-        var quantityControls = document.querySelectorAll('.quantity-controls');
-        
-        quantityControls.forEach(function(control) {
-            var decreaseButton = control.querySelector('.decrease');
-            var increaseButton = control.querySelector('.increase');
-            var quantitySpan = control.querySelector('.quantity');
 
-            // Artı (+) butonuna tıklanıldığında miktarı artır
-            increaseButton.addEventListener('click', function() {
-                var currentQuantity = parseInt(quantitySpan.textContent);
-                quantitySpan.textContent = currentQuantity + 1;
-                updateTotalPrice();
-            });
-
-            // Eksi (-) butonuna tıklanıldığında miktarı azalt
-            decreaseButton.addEventListener('click', function() {
-                var currentQuantity = parseInt(quantitySpan.textContent);
-                if (currentQuantity > 0) {
-                    quantitySpan.textContent = currentQuantity - 1;
-                }
-                updateTotalPrice();
-            });
-        });
-
-        // Sepetteki toplam fiyatı güncelleyen fonksiyon
-        function updateTotalPrice() {
-            var totalPrice = 0;
-            var menuItems = document.querySelectorAll('.menu-item');
-            
-            // Her bir menü öğesindeki fiyat ve miktarı alıp toplamda topluyoruz
-            menuItems.forEach(function(item) {
-                var quantity = parseInt(item.querySelector('.quantity').textContent);
-                var price = parseFloat(item.dataset.price);
-                totalPrice += quantity * price;
-            });
-
-            // Toplam fiyatı sayfada gösterelim
-            var totalPriceElement = document.getElementById('total-price');
-            totalPriceElement.textContent = "Toplam: " + totalPrice.toFixed(2) + " TL";
-        }
-    };
-</script>
 
             <!-- Yemekler -->
   <div class="menu-section">
