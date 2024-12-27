@@ -366,17 +366,20 @@
         </div>
     </div>
 </div>
-
 <script>
     window.onload = function() {
-        // Çorba fiyatlarını localStorage'dan al ve menüye yerleştir
+        // Çorba isimlerini tanımlayalım
         var soups = ['mercimek', 'ezogelin', 'kellepaca', 'domates', 'tarator', 'yayla', 'tavuk', 'balık', 'karnıbahar', 'şehriye', 'acılı', 'sütlü', 'zeytinyağlı', 'kısır', 'etli', 'vegan', 'soğan', 'kabak', 'börülce', 'şehriye-tarator', 'etli-mercimek'];
 
-        // Çorba fiyatlarını localStorage'dan güncelle
+        // Çorba fiyatlarını localStorage'dan al ve menüye yerleştir
         soups.forEach(function(soup) {
             var price = localStorage.getItem(soup + '-price');
             if (price) {
-                document.querySelector(`.menu-item[data-name="${soup}"] .price`).textContent = price + " TL";
+                var menuItem = document.querySelector(`.menu-item[data-name="${soup}"]`);
+                if (menuItem) {
+                    menuItem.querySelector('.price').textContent = price + " TL";
+                    menuItem.dataset.price = price;  // Fiyatı data-price'a güncelle
+                }
             }
         });
 
@@ -419,11 +422,18 @@
                 totalPrice += quantity * price;
             });
 
-            // Sepet toplamını buraya ekleyebilirsiniz, örneğin:
+            // Sepet toplamını burada güncelleyebilirsiniz
             console.log("Toplam Fiyat: " + totalPrice + " TL");
+
+            // Örneğin, toplam fiyatı ekranda göstermek için:
+            var totalPriceElement = document.getElementById('total-price');
+            if (totalPriceElement) {
+                totalPriceElement.textContent = "Toplam: " + totalPrice.toFixed(2) + " TL";
+            }
         }
     };
 </script>
+
 
 
 
