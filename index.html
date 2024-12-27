@@ -385,51 +385,58 @@
 
     <div class="menu-items">
         <!-- Önceki Yemekler -->
-        <div class="menu-item" data-name="Köfte" data-price="130">
-            <img src="images.jfif" alt="Köfte">
-            <label for="yemek1">Köfte - 130 TL</label>
-            <p>Güzelce marine edilmiş lezzetli köfte.</p>
-            <div class="quantity-controls">
-                <button type="button" class="decrease">-</button>
-                <span class="quantity">0</span>
-                <button type="button" class="increase">+</button>
-            </div>
-        </div>
-        <div class="menu-item" data-name="Pizza" data-price="150">
-            <img src="pizza.jpg" alt="Pizza">
-            <label for="yemek2">Pizza - 150 TL</label>
-            <p>Taze mozzarella, domates ve fesleğen ile hazırlanan klasik İtalyan pizzası.</p>
-            <div class="quantity-controls">
-                <button type="button" class="decrease">-</button>
-                <span class="quantity">0</span>
-                <button type="button" class="increase">+</button>
-            </div>
-        </div>
-        <div class="menu-item" data-name="Köri Tavuk" data-price="140">
-            <img src="kori-soslu-tavuk-yemekcom.webp" alt="Köri Tavuk">
-            <label for="yemek3">Köri Tavuk - 140 TL</label>
-            <p>Zengin ve aromatik bir köri sosunda pişirilmiş tavuk.</p>
-            <div class="quantity-controls">
-                <button type="button" class="decrease">-</button>
-                <span class="quantity">0</span>
-                <button type="button" class="increase">+</button>
-            </div>
-        </div>
-	    <script>
+       <div class="menu-item" data-name="kofte" data-price="130">
+    <img src="images.jfif" alt="Köfte">
+    <label for="yemek1">Köfte - 130 TL</label>
+    <p>Güzelce marine edilmiş lezzetli köfte.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="pizza" data-price="150">
+    <img src="pizza.jpg" alt="Pizza">
+    <label for="yemek2">Pizza - 150 TL</label>
+    <p>Taze mozzarella, domates ve fesleğen ile hazırlanan klasik İtalyan pizzası.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+
+<div class="menu-item" data-name="kori tavuk" data-price="140">
+    <img src="kori-soslu-tavuk-yemekcom.webp" alt="Köri Tavuk">
+    <label for="yemek3">Köri Tavuk - 140 TL</label>
+    <p>Zengin ve aromatik bir köri sosunda pişirilmiş tavuk.</p>
+    <div class="quantity-controls">
+        <button type="button" class="decrease">-</button>
+        <span class="quantity">0</span>
+        <button type="button" class="increase">+</button>
+    </div>
+</div>
+<script>
     window.onload = function() {
-        // Fiyat güncelleme fonksiyonu
+        // Menü öğesinin fiyatını güncelleyen fonksiyon
         function updateMenuItemPrice(itemName) {
+            // localStorage'dan fiyatı al
             var price = localStorage.getItem(`${itemName}-price`);
             if (price) {
-                // Menüdeki öğeyi seç
-                var menuItem = document.querySelector(`.menu-item[data-name="${itemName}"]`);  // Eşleşen öğeyi al
+                // Menü öğesini seç
+                var menuItem = document.querySelector(`.menu-item[data-name="${itemName}"]`);
                 if (menuItem) {
-                    menuItem.setAttribute('data-price', price);  // Yeni fiyatı data-price'a kaydet
-                    var label = menuItem.querySelector('label');  // Fiyatın gösterileceği alanı al
+                    // Fiyatı data-price'a kaydet
+                    menuItem.setAttribute('data-price', price);
+
+                    // Fiyatın görünmesini sağlayacak 'label' etiketini güncelle
+                    var label = menuItem.querySelector('label');
                     if (label) {
                         label.textContent = `${itemName.charAt(0).toUpperCase() + itemName.slice(1)} - ${price} TL`;  // Fiyatı güncelle
                     }
-                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
+
+                    console.log(`${itemName.charAt(0).toUpperCase() + itemName.slice(1)} fiyatı başarıyla güncellendi: ${price}`);
                 } else {
                     console.error(`${itemName} menü öğesi bulunamadı.`);
                 }
@@ -439,7 +446,9 @@
         }
 
         // Çorba ve yemekler için fiyat güncellenmesi yapılacak öğeler
-        const items = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla', 'kofte', 'pizza', 'kori tavuk'];  
+        const items = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla', 'kofte', 'pizza', 'kori tavuk'];
+        
+        // Her bir öğe için fiyat güncelleme fonksiyonunu çalıştır
         items.forEach(updateMenuItemPrice);
     };
 </script>
