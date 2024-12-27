@@ -210,31 +210,35 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-	 <script>
+	<script>
     window.onload = function() {
-        // Çorba fiyatlarını güncelleme fonksiyonu
-        function updateSoupPrice(soupName) {
-            var price = localStorage.getItem(`${soupName}-price`);
+        // Fiyat güncelleme fonksiyonu
+        function updateMenuItemPrice(itemName) {
+            var price = localStorage.getItem(`${itemName}-price`);
             if (price) {
                 // Menüdeki öğeyi seç
-                var menuItem = document.querySelector(`.menu-item[data-name="${soupName.toLowerCase()}"]`);
+                var menuItem = document.querySelector(`.menu-item[data-name="${itemName.toLowerCase()}"]`);  // Küçük harf ile eşleşme sağlanıyor
                 if (menuItem) {
-                    menuItem.setAttribute('data-price', price);  // Veriyi güncelle
-                    menuItem.querySelector('.price').textContent = price;  // Fiyatı görüntüle
-                    console.log(`${soupName} fiyatı başarıyla güncellendi: ${price}`);
+                    menuItem.setAttribute('data-price', price);  // Yeni fiyatı data-price'a kaydet
+                    var label = menuItem.querySelector('label');  // Fiyatın gösterileceği alan
+                    if (label) {
+                        label.textContent = `${itemName} - ${price} TL`;  // Etiketin fiyat kısmını güncelle
+                    }
+                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
                 } else {
-                    console.error(`${soupName} menü öğesi bulunamadı.`);
+                    console.error(`${itemName} menü öğesi bulunamadı.`);
                 }
             } else {
-                console.log(`LocalStorage'da ${soupName} fiyatı bulunamadı.`);
+                console.log(`${itemName} için localStorage'da fiyat bulunamadı.`);
             }
         }
 
-        // Fiyat güncellemesi yapılacak çorbalar
-        const soups = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla', 'kofte', 'pizza', 'kori tavuk'];  // Yeni çorbalar eklendi
-        soups.forEach(updateSoupPrice);
+        // Çorba ve yemekler için fiyat güncellenmesi yapılacak öğeler
+        const items = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla', 'kofte', 'pizza', 'kori tavuk'];  
+        items.forEach(updateMenuItemPrice);
     };
 </script>
+
 
 
 
