@@ -94,6 +94,25 @@
             <label for="domates-price">Yeni Fiyat (TL): </label>
             <input type="number" id="domates-price" placeholder="Fiyatı girin" />
         </div>
+
+        <!-- Yeni çorbalar -->
+        <div class="price-panel">
+            <h2>Köfte</h2>
+            <label for="kofte-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="kofte-price" placeholder="Fiyatı girin" />
+        </div>
+
+        <div class="price-panel">
+            <h2>Pizza</h2>
+            <label for="pizza-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="pizza-price" placeholder="Fiyatı girin" />
+        </div>
+
+        <div class="price-panel">
+            <h2>Köri Tavuk</h2>
+            <label for="kori-tavuk-price">Yeni Fiyat (TL): </label>
+            <input type="number" id="kori-tavuk-price" placeholder="Fiyatı girin" />
+        </div>
     </div>
 
     <!-- Kaydet ve Ana Sayfa Butonları -->
@@ -119,7 +138,7 @@
             }
 
             // Fiyat güncellemesi yapılacak çorbalar
-            const soups = ['mercimek', 'ezogelin', 'domates'];
+            const soups = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza', 'kori-tavuk'];
             soups.forEach(updateSoupPrice);
         };
 
@@ -128,6 +147,9 @@
             var mercimekPrice = document.getElementById('mercimek-price').value.trim();
             var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
             var domatesPrice = document.getElementById('domates-price').value.trim();
+            var koftePrice = document.getElementById('kofte-price').value.trim();
+            var pizzaPrice = document.getElementById('pizza-price').value.trim();
+            var koriTavukPrice = document.getElementById('kori-tavuk-price').value.trim();
 
             // Fiyatları localStorage'a kaydet
             if (mercimekPrice && !isNaN(mercimekPrice)) {
@@ -138,6 +160,15 @@
             }
             if (domatesPrice && !isNaN(domatesPrice)) {
                 localStorage.setItem('domates-price', domatesPrice);
+            }
+            if (koftePrice && !isNaN(koftePrice)) {
+                localStorage.setItem('kofte-price', koftePrice);
+            }
+            if (pizzaPrice && !isNaN(pizzaPrice)) {
+                localStorage.setItem('pizza-price', pizzaPrice);
+            }
+            if (koriTavukPrice && !isNaN(koriTavukPrice)) {
+                localStorage.setItem('kori-tavuk-price', koriTavukPrice);
             }
 
             alert('Fiyatlar başarıyla kaydedildi!');
