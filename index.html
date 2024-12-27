@@ -210,34 +210,7 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
-	<script>
-    window.onload = function() {
-        // Fiyat güncelleme fonksiyonu
-        function updateMenuItemPrice(itemName) {
-            var price = localStorage.getItem(`${itemName}-price`);
-            if (price) {
-                // Menüdeki öğeyi seç
-                var menuItem = document.querySelector(`.menu-item[data-name="${itemName.toLowerCase()}"]`);  // Küçük harf ile eşleşme sağlanıyor
-                if (menuItem) {
-                    menuItem.setAttribute('data-price', price);  // Yeni fiyatı data-price'a kaydet
-                    var label = menuItem.querySelector('label');  // Fiyatın gösterileceği alan
-                    if (label) {
-                        label.textContent = `${itemName} - ${price} TL`;  // Etiketin fiyat kısmını güncelle
-                    }
-                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
-                } else {
-                    console.error(`${itemName} menü öğesi bulunamadı.`);
-                }
-            } else {
-                console.log(`${itemName} için localStorage'da fiyat bulunamadı.`);
-            }
-        }
-
-        // Çorba ve yemekler için fiyat güncellenmesi yapılacak öğeler
-        const items = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla', 'kofte', 'pizza', 'kori tavuk'];  
-        items.forEach(updateMenuItemPrice);
-    };
-</script>
+	
 
 
 
@@ -442,6 +415,35 @@
                 <button type="button" class="increase">+</button>
             </div>
         </div>
+	    <script>
+    window.onload = function() {
+        // Fiyat güncelleme fonksiyonu
+        function updateMenuItemPrice(itemName) {
+            var price = localStorage.getItem(`${itemName}-price`);
+            if (price) {
+                // Menüdeki öğeyi seç
+                var menuItem = document.querySelector(`.menu-item[data-name="${itemName}"]`);  // Eşleşen öğeyi al
+                if (menuItem) {
+                    menuItem.setAttribute('data-price', price);  // Yeni fiyatı data-price'a kaydet
+                    var label = menuItem.querySelector('label');  // Fiyatın gösterileceği alanı al
+                    if (label) {
+                        label.textContent = `${itemName.charAt(0).toUpperCase() + itemName.slice(1)} - ${price} TL`;  // Fiyatı güncelle
+                    }
+                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
+                } else {
+                    console.error(`${itemName} menü öğesi bulunamadı.`);
+                }
+            } else {
+                console.log(`${itemName} için localStorage'da fiyat bulunamadı.`);
+            }
+        }
+
+        // Çorba ve yemekler için fiyat güncellenmesi yapılacak öğeler
+        const items = ['mercimek', 'ezogelin', 'kelle paça', 'domates', 'tarator', 'yayla', 'kofte', 'pizza', 'kori tavuk'];  
+        items.forEach(updateMenuItemPrice);
+    };
+</script>
+
 	   
         
         <!-- Yeni Yemekler -->
