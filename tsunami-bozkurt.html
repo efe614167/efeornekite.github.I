@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maç Sonucu - Tsunami Spor vs Bozkurt</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+        }
+        .score-container {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .score-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin: 0 15px;
+        }
+        .score {
+            font-size: 60px;
+            font-weight: bold;
+            color: #ff4747;
+        }
+        .team-section {
+            margin: 20px 0;
+            width: 80%;
+        }
+        .formation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 5px 0;
+        }
+        .player {
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        .goal-section {
+            margin-top: 20px;
+            width: 80%;
+            background: #222;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .goal {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #444;
+        }
+        .goal:last-child {
+            border-bottom: none;
+        }
+        .goal-time {
+            color: #ff4747;
+        }
+        .goal-player {
+            color: #47b5ff;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff4747;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #d83636;
+        }
+
+        /* Mobil uyumlu tasarım */
+        @media (max-width: 768px) {
+            .score-container {
+                flex-direction: column;
+            }
+            .score-image {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 10px;
+            }
+            .score {
+                font-size: 48px;
+            }
+            .player {
+                font-size: 18px;
+            }
+            .goal-section {
+                width: 90%;
+            }
+            .button {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tsunami Spor vs Bozkurt</h1>
+
+<div class="score-container">
+    <img class="score-image" src="takım.jpeg" alt="TsunamiSpor">
+    <div class="score">10 - 6</div>
+    <img class="score-image" src="../Downloads/DALL·E 2025-02-28 10.37.36 - A logo design featuring a stylized Bozkurt (Grey Wolf) with the text 'Bozkurt' above it. The color scheme should be a mix of blue and black. The Bozku.webp" alt="Bozkurt">
+</div>
+
+<div class="team-section">
+    <h2>Tsunami Spor İlk 6</h2>
+    <div class="formation">
+        <div class="row">
+            <div class="player">🧤 Yiğit Efe Şahin</div>
+        </div>
+        <div class="row">
+            <div class="player">🛡️ Alperen Soydaş</div>
+            <div class="player">🛡️ Burak Karatepe</div>
+        </div>
+        <div class="row">
+            <div class="player">🛡️ Ali Mahir Eski</div>
+            <div class="player">🛡️ Burak Beşir Bark</div>
+        </div>
+        <div class="row">
+            <div class="player">🏃‍♂️ Yiğit Efe Yeşildağ</div>
+        </div>
+    </div>
+</div>
+
+<div class="team-section">
+    <h2 style="color:#47b5ff">Bozkurt İlk 6</h2>
+    <div class="formation">
+        <div class="row">
+            <div class="player">🧤 Alperen</div>
+        </div>
+        <div class="row">
+            <div class="player">🛡️ Ozan</div>
+            <div class="player">🛡️ Kerem</div>
+        </div>
+        <div class="row">
+            <div class="player">🛡️ Berk</div>
+            <div class="player">🛡️ Muhammet</div>
+        </div>
+        <div class="row">
+            <div class="player">🏃‍♂️ Berat</div>
+        </div>
+    </div>
+</div>
+
+<div class="goal-section">
+    <h2>Goller</h2>
+    <div class="goal">
+        <span class="goal-time">5'</span>
+        <span class="goal-player">Yiğit Efe Yeşildağ (Tsunami Spor) 1-0</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">9'</span>
+        <span class="goal-player">Yiğit Efe Yeşildağ (Tsunami Spor) 2-0</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">12'</span>
+        <span class="goal-player">Muhammet (Bozkurt) 2-1</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">14'</span>
+        <span class="goal-player">Burak Beşir Bark (Tsunami Spor) 3-1</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">16'</span>
+        <span class="goal-player">Berat (Bozkurt) 3-2</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">19'</span>
+        <span class="goal-player">Muhammet (Bozkurt) 3-3</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">24'</span>
+        <span class="goal-player">Yiğit Efe Yeşildağ (Tsunami Spor) 4-3</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">32'</span>
+        <span class="goal-player">Yiğit Efe Yeşildağ (Tsunami Spor) 5-3</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">35'</span>
+        <span class="goal-player">Muhammet (Bozkurt) 5-4</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">39'</span>
+        <span class="goal-player">Yiğit Efe Yeşildağ (Tsunami Spor) 6-4</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">41'</span>
+        <span class="goal-player">Muhammet (Bozkurt) 6-5</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">44'</span>
+        <span class="goal-player">Burak Beşir Bark (Tsunami Spor) 7-5</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">49'</span>
+        <span class="goal-player">Yiğit Efe Yeşildağ (Tsunami Spor) 8-5</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">51'</span>
+        <span class="goal-player">Berat (Bozkurt) 8-6</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">53'</span>
+        <span class="goal-player">Yiğit Efe Yeşildağ (Tsunami Spor) 9-6</span>
+    </div>
+    <div class="goal">
+        <span class="goal-time">55'</span>
+        <span class="goal-player">Yiğit Efe Yeşildağ (Tsunami Spor) 10-6</span>
+    </div>
+</div>
+
+<button class="button" onclick="window.location.href='index.html'">Anasayfaya Git</button>
+
+</body>
+</html>

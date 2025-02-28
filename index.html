@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsunamispor Takım Tanıtımı</title>
+    <style>
+        /* Genel stil ayarları */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #D32F2F; /* Kırmızı renk */
+            color: white;
+            display: flex;
+            justify-content: center; /* Logo ortada */
+            align-items: center;
+            padding: 20px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 15px; /* Logo ve menü arasına boşluk */
+        }
+
+        header .logo img {
+            width: 160px; /* Daha büyük logo boyutu */
+            height: 140px; /* Daha büyük logo boyutu */
+            margin-bottom: 15px;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Menüyü ortalar */
+            margin-top: 15px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Takım Bilgisi */
+        .team-info {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tarihçe Bölümü */
+        .history {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .history h2 {
+            font-size: 1.5em;
+            color: #D32F2F; /* Kırmızı renk */
+        }
+
+        .history p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Mobil uyumlu ve genel düzen */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                display: block;
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .team-info, .history {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="takım.jpeg" alt="Tsunamispor Logo"> <!-- Logoyu buraya ekleyebilirsiniz -->
+            <h1>Tsunamispor</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="oyuncular.html">Oyuncular</a></li>
+                <li><a href="maclar.html">Maçlar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="team-info">
+        <h2>Takım Başkanı: Yğit Efe Yeşildağ</h2>
+        <p>Tsunamispor'un takım başkanı olan Yğit Efe Yeşildağ, kulübün vizyonunu ve misyonunu şekillendiren önemli bir figürdür.</p>
+    </section>
+
+    <section class="history">
+        <h2>Takım Tarihçesi</h2>
+        <p>Tsunamispor, 2022 yılında kuruldu ve kısa sürede büyük başarılar elde etmeyi hedeflemektedir. Kulüp, profesyonel bir şekilde futbol dünyasına adım atarak, hem oyuncu yetiştirmeyi hem de ulusal başarılar kazanmayı hedefliyor.</p>
+    </section>
+</body>
+</html>
