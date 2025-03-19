@@ -3,166 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çorba ve Yemek Fiyat Düzenleme</title>
+    <title>Düşünmelisin</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-
-        h1 {
             text-align: center;
-            color: #5c67f2;
-            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #ffe6e6;
         }
-
-        .price-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            justify-content: center;
+        h1 {
+            font-size: 36px;
+            color: #f44336;
+        }
+        .message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .buttons {
             margin-top: 20px;
         }
-
-        .price-panel {
-            padding: 15px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            margin-top: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
         button {
-            display: inline-block;
             padding: 10px 20px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #5c67f2;
-            color: white;
+            margin: 10px;
             font-size: 16px;
             cursor: pointer;
         }
-
         button:hover {
-            background-color: #4b56d0;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 30px;
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
-    <h1>Çorba ve Yemek Fiyatlarını Düzenleyin</h1>
+    <h1>Hayır, Bence Bir Düşün</h1>
+    <p class="message">Lütfen bir daha düşünün. 🤔</p>
 
-    <!-- Çorbalar ve Yemekler -->
-    <div class="price-container">
-        <!-- Çorba Fiyatları -->
-        <div class="price-panel">
-            <h2>Mercimek Çorbası</h2>
-            <label for="mercimek-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="mercimek-price" placeholder="Fiyatı girin" />
-        </div>
-
-        <div class="price-panel">
-            <h2>Ezogelin Çorbası</h2>
-            <label for="ezogelin-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="ezogelin-price" placeholder="Fiyatı girin" />
-        </div>
-
-        <div class="price-panel">
-            <h2>Domates Çorbası</h2>
-            <label for="domates-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="domates-price" placeholder="Fiyatı girin" />
-        </div>
-
-        <!-- Yemek Fiyatları -->
-        <div class="price-panel">
-            <h2>Köfte</h2>
-            <label for="kofte-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="kofte-price" placeholder="Fiyatı girin" />
-        </div>
-
-        <div class="price-panel">
-            <h2>Pizza</h2>
-            <label for="pizza-price">Yeni Fiyat (TL): </label>
-            <input type="number" id="pizza-price" placeholder="Fiyatı girin" />
-        </div>
+    <div class="buttons">
+        <button onclick="window.location.href='index.html';">Geri Dön</button>
     </div>
-
-    <!-- Kaydet ve Ana Sayfa Butonları -->
-    <div class="button-container">
-        <button id="save-prices">Fiyatları Kaydet</button>
-        <button onclick="window.location.href='index.html';">Ana Sayfaya Dön</button>
-    </div>
-
-    <script>
-        window.onload = function() {
-            // Fiyat güncelleme fonksiyonu
-            function updatePrice(itemName) {
-                var price = localStorage.getItem(`${itemName}-price`);  // LocalStorage'dan fiyatı al
-                if (price) {
-                    var priceInput = document.getElementById(`${itemName}-price`);
-                    if (priceInput) {
-                        priceInput.value = price;  // Fiyatı input'a yerleştir
-                    }
-                    console.log(`${itemName} fiyatı başarıyla güncellendi: ${price}`);
-                } else {
-                    console.log(`${itemName} için fiyat bulunamadı.`);
-                }
-            }
-
-            // Fiyat güncellemesi yapılacak yemekler ve çorbalar
-            const items = ['mercimek', 'ezogelin', 'domates', 'kofte', 'pizza'];
-            items.forEach(updatePrice);
-        };
-
-        document.getElementById('save-prices').addEventListener('click', function() {
-            var mercimekPrice = document.getElementById('mercimek-price').value.trim();
-            var ezogelinPrice = document.getElementById('ezogelin-price').value.trim();
-            var domatesPrice = document.getElementById('domates-price').value.trim();
-            var koftePrice = document.getElementById('kofte-price').value.trim();
-            var pizzaPrice = document.getElementById('pizza-price').value.trim();
-
-            // Fiyatları localStorage'a kaydet
-            if (mercimekPrice && !isNaN(mercimekPrice)) {
-                localStorage.setItem('mercimek-price', mercimekPrice);
-            }
-            if (ezogelinPrice && !isNaN(ezogelinPrice)) {
-                localStorage.setItem('ezogelin-price', ezogelinPrice);
-            }
-            if (domatesPrice && !isNaN(domatesPrice)) {
-                localStorage.setItem('domates-price', domatesPrice);
-            }
-            if (koftePrice && !isNaN(koftePrice)) {
-                localStorage.setItem('kofte-price', koftePrice);
-            }
-            if (pizzaPrice && !isNaN(pizzaPrice)) {
-                localStorage.setItem('pizza-price', pizzaPrice);
-            }
-
-            alert('Fiyatlar başarıyla kaydedildi!');
-        });
-    </script>
 </body>
 </html>
