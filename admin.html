@@ -3,102 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Yap</title>
+    <title>Teşekkürler!</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
-
-        .login-container {
-            background-color: white;
-            padding: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            width: 300px;
-        }
-
-        h2 {
             text-align: center;
-            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #e6ffe6;
         }
-
-        label {
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            display: block;
+        h1 {
+            font-size: 36px;
+            color: #4CAF50;
         }
-
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .message {
+            font-size: 24px;
+            margin: 20px 0;
         }
-
+        .buttons {
+            margin-top: 20px;
+        }
         button {
-            background-color: #4CAF50;
-            color: white;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
             cursor: pointer;
         }
-
         button:hover {
-            background-color: #45a049;
+            background-color: #ddd;
         }
-
-        .error {
-            color: red;
-            font-size: 1em;
-            text-align: center;
+        .balloon {
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-50px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
 <body>
+    <h1>Teşekkür ederim, Sümeyye Hanım!</h1>
+    <p class="message">Sizi kırmadığınız için çok teşekkür ederim! 🎉</p>
 
-    <div class="login-container">
-        <h2>Yönetici Girişi</h2>
-        <form id="login-form">
-            <label for="username">Kullanıcı Adı:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Şifre:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Giriş Yap</button>
-            <div class="error" id="error-message"></div>
-        </form>
+    <!-- Balonlar -->
+    <div class="balloon" style="left: 10%; animation-delay: 0s;">
+        🎈
+    </div>
+    <div class="balloon" style="left: 20%; animation-delay: 0.5s;">
+        🎈
+    </div>
+    <div class="balloon" style="left: 30%; animation-delay: 1s;">
+        🎈
+    </div>
+    <div class="balloon" style="left: 40%; animation-delay: 1.5s;">
+        🎈
+    </div>
+    <div class="balloon" style="left: 50%; animation-delay: 2s;">
+        🎈
     </div>
 
-    <script>
-        // Giriş formu submit event listener'ı
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Sayfanın yenilenmesini engelle
-
-            // Kullanıcı adı ve şifreyi al
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Kullanıcı adı ve şifre doğrulama
-            if (username === 'admin' && password === '12345') {
-                // Başarılı giriş: admin2.html'e yönlendir
-                window.location.href = 'admin2.html';
-            } else {
-                // Hatalı giriş: Hata mesajı göster
-                document.getElementById('error-message').textContent = 'Kullanıcı adı veya şifre yanlış.';
-            }
-        });
-    </script>
-
+    <div class="buttons">
+        <button onclick="window.location.href='index.html';">Geri Dön</button>
+    </div>
 </body>
 </html>
