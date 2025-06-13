@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyza Fotoğraf Albümü - Giriş</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f9d29d, #f7a072);
+      font-family: 'Quicksand', sans-serif;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(247,160,114,0.4);
+      padding: 2.5rem 3rem;
+      width: 320px;
+      max-width: 90vw;
+      text-align: center;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    input {
+      border: 2px solid #f7a072;
+      border-radius: 12px;
+      padding: 12px 15px;
+      width: 100%;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      outline: none;
+    }
+    input:focus {
+      border-color: #f95f3a;
+      box-shadow: 0 0 8px #f95f3a;
+    }
+    button {
+      margin-top: 20px;
+      background: #f95f3a;
+      color: white;
+      font-weight: 600;
+      padding: 12px 0;
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 5px 15px rgba(249,95,58,0.5);
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 1.1rem;
+    }
+    button:hover {
+      background: #f76b42;
+      box-shadow: 0 8px 20px rgba(247,107,66,0.7);
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #f76b42;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1.5px;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+  <div class="card">
+    <h2>Beyza Fotoğraf Albümü</h2>
+    <input type="password" id="password" placeholder="Şifreyi giriniz..." autofocus />
+    <button onclick="login()">Giriş Yap</button>
+  </div>
+
+  <script>
+    function login() {
+      const pass = document.getElementById('password').value.trim();
+      if(pass === "beyza2025") {
+        localStorage.setItem("authenticated", "true");
+        window.location.href = "album.html";
+      } else {
+        alert("Şifre yanlış! Lütfen tekrar deneyin.");
+      }
+    }
+
+    // Enter tuşu ile giriş yapma
+    document.getElementById('password').addEventListener('keydown', function(e) {
+      if(e.key === 'Enter') {
+        login();
+      }
+    });
+  </script>
+  
+</body>
+</html>
